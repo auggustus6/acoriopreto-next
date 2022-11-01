@@ -1,6 +1,13 @@
+import Head from "next/head";
+import Image from "next/image";
+
 import Carousel from "@components/Carousel";
 import Header from "@components/Header";
-import Image from "next/image";
+import DefaultButton from "@components/Buttons/DefaultButton";
+import FixedBackground from "@components/FixedBackground";
+import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai";
+import { BsTools as TollBoxIcon } from "react-icons/bs";
+
 import { BannerSection, Container } from "@rootStyle/home";
 import { ProductsSection, ProductImg, ProductLink } from "@rootStyle/productsSectionStyles";
 import {
@@ -9,11 +16,12 @@ import {
   SubSection,
   CompanyInfo,
 } from "@rootStyle/servicesSectionStyles";
-import Head from "next/head";
+import { DefaultContainer } from "@rootStyle/defaultContainer";
+
 import Thumbs1 from "@images/thumbs.png";
 import Thumbs2 from "@images/thumbs2.png";
-import DefaultButton from "@components/Buttons/DefaultButton";
-import { DefaultContainer } from "@rootStyle/defaultContainer";
+import StickyBg from "@images/sticky_bg.jpg";
+import Footer from "@components/Footer";
 
 export default function Home() {
   return (
@@ -79,12 +87,12 @@ export default function Home() {
               de 08 anos.
             </p>
             <DefaultButton onClick={() => {}} link>
-              Saiba mais sobre a AçoRio
+              Saiba mais sobre a AçoRio <InfoIcon size={18} />
             </DefaultButton>
           </CompanyInfo>
         </ServicesContent>
       </ServicesSection>
-      <div style={{ marginTop: "200px" }}></div>
+      <FixedBackground backgroundUrl={StickyBg.src} />
       <ProductsSection>
         <DefaultContainer>
           <h2>Conheça alguns de nossos produtos:</h2>
@@ -106,10 +114,33 @@ export default function Home() {
               <p>VERGALHÕES DE AÇO</p>
             </ProductLink>
           </div>
+          <DefaultButton onClick={() => {}}>
+            Lista de Produtos <TollBoxIcon size={16} />
+          </DefaultButton>
+        </DefaultContainer>
+        <DefaultContainer>
+          <h2>Informações em Destaque</h2>
+          <div>
+            <ProductLink href="">
+              <ProductImg width={211} src={Thumbs1.src} height={211} alt="" />
+              <p>VERGALHÕES DE AÇO</p>
+            </ProductLink>
+            <ProductLink href="">
+              <ProductImg width={211} src={Thumbs1.src} height={211} alt="" />
+              <p>VERGALHÕES DE AÇO</p>
+            </ProductLink>
+            <ProductLink href="">
+              <ProductImg width={211} src={Thumbs1.src} height={211} alt="" />
+              <p>VERGALHÕES DE AÇO</p>
+            </ProductLink>
+            <ProductLink href="">
+              <ProductImg width={211} src={Thumbs1.src} height={211} alt="" />
+              <p>VERGALHÕES DE AÇO</p>
+            </ProductLink>
+          </div>
         </DefaultContainer>
       </ProductsSection>
-      {/* <StickyBackground backgroundUrl={StickyBg.src} /> */}
-      {/* <div style={{background: "white", height: "100vh"}}></div> */}
+      <Footer />
     </Container>
   );
 }

@@ -18,7 +18,6 @@ export const BannerSection = styled.div`
     max-width: ${(p) => p.theme.maxWidth};
     text-align: center;
     color: white;
-    font-size: 2.1rem;
 
     @media (max-width: 720px) {
       & {

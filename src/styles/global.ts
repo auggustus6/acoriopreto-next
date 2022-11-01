@@ -16,14 +16,20 @@ export default createGlobalStyle`
     color: ${(p) => p.theme.blackText};
   }
 
-  body{
-    overflow-x: hidden;
-    position: absolute;
-    width: 100vw;
-    background-image: url(${() => StickyBg.src});
-    background-attachment: fixed; 
-    background-size: cover;
-    z-index: -1;
+  h1{
+    font-size: 2.1rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  h3{
+    font-size: 1.6rem;
+  }
+
+  p{
+    font-size: 0.95rem;
   }
 
   li, ol{
@@ -34,13 +40,14 @@ export default createGlobalStyle`
     cursor: pointer;
     border: none;
     border-radius: 3px;
-
+    text-align: center;
     :hover{
       opacity: 0.9;
     }
   }
 
   a{
+    text-align: center;
     text-decoration: none;
     color: inherit;
   }

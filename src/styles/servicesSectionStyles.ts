@@ -30,12 +30,8 @@ export const SubSection = styled.div`
 
   div {
     flex: 3;
-    & > p {
-      font-size: 0.95rem;
-    }
   }
   h3 {
-    font-size: 1.6rem;
     margin-bottom: 1rem;
     color: ${(p) => p.theme.palette.secondary.main};
   }
@@ -61,15 +57,6 @@ export const CompanyInfo = styled.div`
   align-content: center;
   gap: 1.4rem;
   h3 {
-    font-size: 1.6rem;
     color: ${(p) => p.theme.palette.secondary.main};
-  }
-  p {
-    font-size: 0.95rem;
-  }
-
-  button,
-  a {
-    text-align: center;
   }
 `;
