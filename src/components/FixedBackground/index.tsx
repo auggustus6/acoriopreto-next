@@ -39,7 +39,6 @@ export default function FixedBackground({
   customHeight = 200,
   fixed = false,
 }: FixedBackgroundProps) {
-  console.log({ backgroundUrl });
 
   if (fixed) {
     return (

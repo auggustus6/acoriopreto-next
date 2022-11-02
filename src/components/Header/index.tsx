@@ -1,12 +1,4 @@
-import { DefaultContainer } from "@rootStyle/defaultContainer";
-import {
-  Icons,
-  InfoContainer,
-  InfoContent,
-  HeaderNav,
-  StyledImage,
-  HeaderContent,
-} from "./styles";
+import { Icons, InfoContainer, InfoContent } from "./styles";
 import { BsGeoAltFill as GeoIcon } from "react-icons/bs";
 import { IoMdMail as EmailIcon } from "react-icons/io";
 import { ImPhone as PhoneIcon } from "react-icons/im";
@@ -15,17 +7,15 @@ import {
   AiOutlineFacebook as FaceBookIcon,
 } from "react-icons/ai";
 import IconAndLink from "@components/IconAndLink";
-import CloseButton from "@components/Buttons/CloseButton";
-import Image from "next/image";
-import Logo from "../../../public/img/logo.png";
-import DropDownMenu from "@components/DropDownMenu";
-import DropDownItem from "@components/DropDownMenu/DropDownItem";
+import HeaderNav from "./HeaderNav";
+import { useState } from "react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOnTop, setIsOnTop] = useState(false);
   return (
     <>
       <InfoContainer>
-        <CloseButton onClose={() => {}} />
         <InfoContent>
           <span>
             <p>
@@ -48,27 +38,7 @@ export default function Header() {
           </Icons>
         </InfoContent>
       </InfoContainer>
-      <HeaderNav>
-        <HeaderContent>
-          <StyledImage src={Logo.src} alt="Logo Aço Rio" width={510} height={173} />
-          <nav>
-            <ul>
-              <li>HOME</li>
-              <li>EMPRESA</li>
-              <li>
-                PRODUTOS
-                {/* <DropDownMenu>
-                  <DropDownItem>Item 1</DropDownItem>
-                  <DropDownItem>Item 2</DropDownItem>
-                </DropDownMenu> */}
-              </li>
-              <li>OBRAS</li>
-              <li>INFORMAÇÕES</li>
-              <li>CONTATO</li>
-            </ul>
-          </nav>
-        </HeaderContent>
-      </HeaderNav>
+      <HeaderNav {...{ isOpen, setIsOpen, isOnTop, setIsOnTop }} />
     </>
   );
 }

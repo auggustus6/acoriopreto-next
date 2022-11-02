@@ -51,6 +51,7 @@ export const Content = styled(DefaultContainer)`
       flex-direction: column;
       flex-wrap: wrap;
       max-height: 40px;
+      text-align: center;
     }
 
     li {
