@@ -1,7 +1,7 @@
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import { Container, Section } from "./styles";
+import { Container, Section } from "../../styles/servicos/styles";
 import banner from "./img/topo-servicos.jpg";
 import thumbs1 from "./img/thumb1-large.png";
 import thumbs2 from "./img/thumb2.png";

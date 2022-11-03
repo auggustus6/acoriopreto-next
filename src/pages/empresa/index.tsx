@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import Link from "next/link";
-import { Container, AboutText } from "./styles";
+import { Container, AboutText } from "../../styles/empresa/styles";
 import banner from "./banner-sobre.jpg";
 import Image from "next/image";
 

@@ -23,7 +23,8 @@ const Container = styled.span`
     font-weight: 600;
   }
 
-  a {
+  a,
+  div {
     display: flex;
     align-items: center;
     gap: 0.1rem;
@@ -38,13 +39,13 @@ export default function PagePath({ paths, children }: PagePathProps) {
   return (
     <Container>
       {paths.map((path, i) => (
-        <>
-          <Link href={path.link} key={i}>
+        <div key={i}>
+          <Link href={path.link}>
             {i == 0 && <HomeIcon size={14} />}
             {path.name}
-          </Link>{" "}
+          </Link>
           »
-        </>
+        </div>
       ))}
       <strong>{children}</strong>
     </Container>
