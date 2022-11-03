@@ -1,20 +1,20 @@
-import DefaultButton from "@components/Buttons/DefaultButton";
-import { DefaultContainer } from "@rootStyle/defaultContainer";
+import DefaultContainer from "@components/DefaultContainer";
+import Link from "next/link";
 import styled from "styled-components";
 
-export const Container = styled.footer`
-  display: flex;
-  justify-content: center;
+export const Container = styled(DefaultContainer)`
   background: #333;
-  padding: 2rem 0;
-  color: white;
+  padding-top: 2rem;
+  .content {
+    flex-direction: column;
+  }
 `;
 
-export const Content = styled(DefaultContainer)`
+export const Content = styled.footer`
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  text-align: start;
+  color: white;
 
   div {
     display: flex;
@@ -65,12 +65,13 @@ export const Content = styled(DefaultContainer)`
 
   @media (max-width: 980px) {
     flex-direction: column-reverse;
-    p, strong{
+    p,
+    strong {
       text-align: center;
       width: 95vw;
     }
 
-    .info-footer{
+    .info-footer {
       text-align: center;
       width: 95vw;
     }
@@ -101,5 +102,45 @@ export const StyledButton = styled.a`
 
   &:hover {
     filter: brightness(1.2);
+  }
+`;
+
+export const SubFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 0;
+  p {
+    font-size: 0.6rem;
+    color: white;
+  }
+
+  div {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  a{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    gap: 0.1rem;
+  }
+
+  a span {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    color: white;
+
+    gap: 0.1rem;
+    p {
+      background: white;
+      padding: 0 0.3rem;
+      color: #333;
+      font-weight: 600;
+    }
   }
 `;

@@ -1,58 +1,53 @@
-import { DefaultContainer } from "@rootStyle/defaultContainer";
+import DefaultContainer from "@components/DefaultContainer";
 import Image from "next/image";
 import styled from "styled-components";
 
 interface NavProps {
-  isOnTop: boolean;
+  top: boolean;
 }
 
-type isOpen = { isOpen: boolean };
+type isOpen = { open: boolean };
 
-export const StyledHeaderNav = styled.header<NavProps>`
-  position: ${(p) => (p.isOnTop ? "sticky" : "static")};
-  height: 100%;
-  top: ${(p) => (p.isOnTop ? "0" : "-150px")};
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  z-index: 9;
+export const StyledHeaderNav = styled(DefaultContainer)<NavProps>`
+  position: ${(p) => (p.top ? "sticky" : "static")};
+  background: white;
+  top: ${(p) => (p.top ? "0" : "-150px")};
+  z-index: 2;
   transition: top 0.1s;
+
+  .content {
+    align-items: center;
+  }
 `;
 
-export const WrapContent = styled.div`
-  max-width: ${(p) => p.theme.maxWidth};
-  display: flex;
-  align-items: center;
-`;
-
-export const HeaderContent = styled(DefaultContainer)`
+export const HeaderContent = styled.header`
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex: 1;
-  width: 100vw;
+  justify-content: space-between;
+  width: 100%;
 
   @media (max-width: 780px) {
-    justify-content: center;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    justify-self: center;
   }
 `;
 
 export const StyledImage = styled(Image)<NavProps>`
-  height: ${(p) => (p.isOnTop ? "3rem" : "5rem")};
+  height: ${(p) => (p.top ? "3rem" : "5rem")};
   width: auto;
   margin: 1rem 0;
   transition: height 0.3s;
 
   @media (max-width: 900px) {
-    height: ${(p) => (p.isOnTop ? "2.4rem" : "4rem")};
+    height: ${(p) => (p.top ? "2.4rem" : "4rem")};
   }
 `;
 
 export const NavBar = styled.div<isOpen>`
   position: relative;
+  color: #444444;
 
   li {
     white-space: nowrap;
@@ -62,6 +57,14 @@ export const NavBar = styled.div<isOpen>`
     @media (max-width: 900px) {
       font-size: 0.8rem;
     }
+  }
+
+  ul {
+    max-height: 450px;
+  }
+
+  a {
+    width: 100%;
   }
 
   nav ul li ul {
@@ -104,20 +107,81 @@ export const NavBar = styled.div<isOpen>`
     }
   }
 
-  @media (max-width: 780px) {
-    display: none;
+  nav {
+    right: -100vw;
+    top: 0;
+    z-index: 10;
+    /* responsividade aqui */
+    @media (max-width: 780px) {
+      visibility: ${(p) => (p.open ? "visible" : "hidden")};
+      position: fixed;
+      right: ${(p) => (p.open ? "0" : "-100vw")};
+      width: 70vw;
+      height: 100vh;
+      background: ${(p) => p.theme.palette.primary.main};
+      padding: 1.4rem;
+      transition: all 0.4s;
+
+      /* .hide-mobile {
+        display: none;
+      } */
+
+      svg {
+        color: white;
+      }
+
+      ul {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      ul li {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        height: 3rem;
+        color: white;
+
+        :hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+        svg {
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      ul li ul {
+        width: 100%;
+        margin: 0;
+      }
+
+      ul li ul li {
+        margin-bottom: -4px;
+        padding: 0;
+        width: 100%;
+        background: white;
+        color: black;
+        white-space: normal;
+        text-align: center;
+      }
+    }
   }
 `;
 
 export const CloseButton = styled.div`
-  height: 20px;
-  width: 20px;
-  background: red;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   display: none;
-  transform: translate(-30px);
+  transition: transform 0.2s;
 
   @media (max-width: 780px) {
     display: block;
+  }
+
+  :hover {
+    transform: scale(1.1);
   }
 `;

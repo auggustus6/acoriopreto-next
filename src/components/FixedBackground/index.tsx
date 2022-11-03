@@ -39,15 +39,9 @@ export default function FixedBackground({
   customHeight = 200,
   fixed = false,
 }: FixedBackgroundProps) {
-
   if (fixed) {
-    return (
-      <FixedContainer
-        backgroundUrl={backgroundUrl}
-        customHeight={customHeight}
-      ></FixedContainer>
-    );
+    return <FixedContainer backgroundUrl={backgroundUrl} customHeight={customHeight} />;
   }
 
-  return <Container backgroundUrl={backgroundUrl} customHeight={customHeight}></Container>;
+  return <Container backgroundUrl={backgroundUrl} customHeight={customHeight}/>;
 }

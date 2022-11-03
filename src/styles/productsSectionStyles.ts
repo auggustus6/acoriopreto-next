@@ -7,13 +7,7 @@ export const ProductsSection = styled.div`
   justify-content: center;
   flex-direction: column;
   background-color: white;
-  padding: 0 1rem;
   color: ${(p) => p.theme.palette.secondary.main};
-
-  div + div {
-    padding-top: 1.4rem;
-    border-top: 1px solid #cccccc;
-  }
 
   h2 {
     margin: 0;
@@ -24,7 +18,7 @@ export const ProductsSection = styled.div`
   }
 
   div {
-    margin: 2rem auto 3rem;
+    margin: 2rem auto 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,28 +36,31 @@ export const ProductsSection = styled.div`
   }
 `;
 
-export const ProductImg = styled(Image)`
-  &:hover {
-    transform: scale(1.03);
-  }
-`;
+export const ProductImg = styled(Image)``;
 
 export const ProductLink = styled(Link)`
   font-weight: 600;
-  margin: 0.4rem 0.8rem;
+  transition: transform 0.2s;
+  margin: 0.4rem 1rem;
   p {
     font-size: 0.825rem;
   }
   @media (max-width: 600px) {
-    a,img{
+    a,
+    img {
       width: 170px;
       height: 170px;
     }
   }
   @media (max-width: 450px) {
-    a,img{
-      width: 120px;
-      height: 120px;
+    margin-bottom: 1rem;
+    a,
+    img {
+      width: 200px;
+      height: 200px;
     }
+  }
+  &:hover {
+    transform: scale(1.03);
   }
 `;

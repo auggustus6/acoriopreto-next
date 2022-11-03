@@ -53,16 +53,16 @@ export default createGlobalStyle`
   }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
+  background: white;
+  border-radius: 0;
 }
 
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
 
 ::-webkit-scrollbar-thumb {
   background: #aaaaaa;
-  border-radius: 10px;
+  border-radius: 0;
+
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -6,6 +6,7 @@
       "@pages/*": ["./src/pages/*"],
       "@apiRoutes/*": ["./src/pages/api/*"],
       "@rootStyle/*": ["./src/styles/*"],
+      "@mocs/*": ["./src/mocs/*"],
       "@themes/*": ["./src/themes/*"],
       "@images/*": ["./public/img/*"]
     },

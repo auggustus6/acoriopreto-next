@@ -1,22 +1,14 @@
+import DefaultContainer from "@components/DefaultContainer";
 import styled from "styled-components";
-import { DefaultContainer } from "./defaultContainer";
 
-export const ServicesSection = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 6rem 0;
-  background-color: white;
-`;
-
-export const ServicesContent = styled(DefaultContainer)`
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  gap: 3rem;
-
-  h2 {
-    font-size: 2rem;
-    color: ${(p) => p.theme.palette.secondary.main};
+export const SectionContainer = styled(DefaultContainer)`
+  margin: 4rem 0;
+  .content {
+    flex-direction: column;
+    h2 {
+      font-size: 2rem;
+      color: ${(p) => p.theme.palette.secondary.main};
+    }
   }
 `;
 

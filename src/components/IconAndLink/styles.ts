@@ -1,4 +1,3 @@
-import { DefaultContainer } from "@rootStyle/defaultContainer";
 import styled from "styled-components";
 import Link from "next/link";
 
