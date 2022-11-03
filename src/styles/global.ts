@@ -33,7 +33,7 @@ export default createGlobalStyle`
     font-size: 0.95rem;
   }
 
-  li, ol{
+  ul, ol{
     list-style: none;
   }
   

@@ -17,9 +17,12 @@ interface HeaderNavProps {
 
 export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: HeaderNavProps) {
   const listenScroll = () => {
-    setIsOnTop(
-      document.body.scrollTop || document.documentElement.scrollTop > 200 ? true : false
-    );
+    console.log(window.scrollY);
+
+    setIsOnTop(window.scrollY > 180 ? true : false);
+    // setIsOnTop(
+    //   document.body.scrollTop || document.documentElement.scrollTop > 200 ? true : false
+    // );
   };
 
   useEffect(() => {
