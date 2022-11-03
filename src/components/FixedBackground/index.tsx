@@ -11,6 +11,7 @@ const Container = styled.div<FixedBackgroundProps>`
   height: ${(p) => p.customHeight}px;
   background: url(${(p) => p.backgroundUrl}) no-repeat center center;
   background-size: cover;
+  width: 100%;
 `;
 
 const FixedContainer = styled.div<FixedBackgroundProps>`

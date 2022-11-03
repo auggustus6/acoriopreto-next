@@ -47,6 +47,7 @@ export const CompanyInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  margin-top: 3rem;
   gap: 1.4rem;
   h3 {
     color: ${(p) => p.theme.palette.secondary.main};

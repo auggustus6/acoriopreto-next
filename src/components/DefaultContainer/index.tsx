@@ -21,7 +21,7 @@ export default function DefaultContainer({
   children,
   className,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 }) {
   return (

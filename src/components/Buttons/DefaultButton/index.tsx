@@ -3,27 +3,14 @@ import { ReactNode, useState } from "react";
 import { Container } from "./style";
 
 interface CloseButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   children?: ReactNode;
-  link?: boolean;
-  href?: string;
 }
 
-export default function CloseButton({
-  onClick,
-  children,
-  link = false,
-  href = "",
-}: CloseButtonProps) {
+export default function CloseButton({ onClick, children }: CloseButtonProps) {
   function handleButton() {
-    onClick();
+    onClick && onClick();
   }
 
-  return !link ? (
-    <Container onClick={onClick}>{children}</Container>
-  ) : (
-    <Link href={href}>
-      <Container onClick={onClick}>{children}</Container>
-    </Link>
-  );
+  return <Container onClick={onClick}>{children}</Container>;
 }

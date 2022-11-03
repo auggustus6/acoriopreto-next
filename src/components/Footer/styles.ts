@@ -121,7 +121,7 @@ export const SubFooter = styled.div`
     gap: 0.6rem;
   }
 
-  a{
+  a {
     display: flex;
     align-items: center;
     color: white;

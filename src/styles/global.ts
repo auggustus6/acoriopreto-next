@@ -16,6 +16,7 @@ export default createGlobalStyle`
     color: ${(p) => p.theme.blackText};
   }
 
+
   h1{
     font-size: 2.1rem;
   }

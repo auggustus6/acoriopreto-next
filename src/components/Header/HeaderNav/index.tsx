@@ -48,21 +48,19 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                 </CloseButton>
               )}
               <ul>
-                <li>
-                  <Link href="/" title="Página Inicial">
-                    HOME
-                  </Link>
-                </li>
-                <li>
-                  <Link href="empresa" title="Sobra a AçoRio">
-                    EMPRESA
-                  </Link>
-                </li>
+                <Link href="/" title="Página Inicial">
+                  <li>HOME</li>
+                </Link>
+                <Link href="empresa" title="Sobra a AçoRio">
+                  <li>EMPRESA</li>
+                </Link>
                 <li>
                   {!isOpen ? (
-                    <Link href="produtos" title="Produtos AçoRio">
-                      PRODUTOS
-                    </Link>
+                    <span>
+                      <Link href="produtos" title="Produtos AçoRio">
+                        PRODUTOS
+                      </Link>
+                    </span>
                   ) : (
                     "PRODUTOS"
                   )}
@@ -77,11 +75,9 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     })}
                   </ul>
                 </li>
-                <li>
-                  <Link href="servicos" title="Serviços AçoRio">
-                    SERVIÇOS
-                  </Link>
-                </li>
+                <Link href="servicos" title="Serviços AçoRio">
+                  <li>SERVIÇOS</li>
+                </Link>
                 <li>
                   {!isOpen ? (
                     <Link href="obras" title="Obras AçoRio">
@@ -120,11 +116,9 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     })}
                   </ul>
                 </li>
-                <li>
-                  <Link href="contato" title="Fale com a AçoRio">
-                    CONTATO
-                  </Link>
-                </li>
+                <Link href="contato" title="Fale com a AçoRio">
+                  <li>CONTATO</li>
+                </Link>
               </ul>
             </nav>
           </NavBar>

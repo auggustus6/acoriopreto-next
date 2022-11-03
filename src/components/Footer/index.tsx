@@ -36,7 +36,7 @@ export default function Footer() {
         <FooterNav>
           <nav>
             <ul>
-              <Link href="">
+              <Link href="/">
                 <li>Home</li>
               </Link>
               <Link href="empresa">
@@ -63,21 +63,16 @@ export default function Footer() {
             </ul>
           </nav>
           <IconsContainer>
-            <a href="https://www.facebook.com/acoriopreto">
-              <StyledButton onClick={() => {}}>
-                <FaceBookIcon size={20} />
-              </StyledButton>
-            </a>
-            <a href="https://www.instagram.com/acorio_aco/?utm_medium=copy_link">
-              <StyledButton onClick={() => {}}>
-                <IgIcon size={20} />
-              </StyledButton>
-            </a>
-            <a href="mailto:vitor.balbo@acoriopreto.com.br">
-              <StyledButton onClick={() => {}}>
-                <EmailIcon size={20} />
-              </StyledButton>
-            </a>
+            <StyledButton href="https://www.facebook.com/acoriopreto">
+              <FaceBookIcon size={20} />
+            </StyledButton>
+
+            <StyledButton href="https://www.instagram.com/acorio_aco/?utm_medium=copy_link">
+              <IgIcon size={20} />
+            </StyledButton>
+            <StyledButton href="mailto:vitor.balbo@acoriopreto.com.br">
+              <EmailIcon size={20} />
+            </StyledButton>
           </IconsContainer>
         </FooterNav>
       </Content>

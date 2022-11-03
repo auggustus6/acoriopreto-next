@@ -1,6 +1,6 @@
 import DefaultContainer from "@components/DefaultContainer";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface NavProps {
   top: boolean;
@@ -14,6 +14,11 @@ export const StyledHeaderNav = styled(DefaultContainer)<NavProps>`
   top: ${(p) => (p.top ? "0" : "-150px")};
   z-index: 2;
   transition: top 0.1s;
+  ${(p) =>
+    p.top &&
+    css`
+      box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+    `};
 
   .content {
     align-items: center;

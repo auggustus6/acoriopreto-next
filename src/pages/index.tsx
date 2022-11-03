@@ -26,6 +26,7 @@ import thumb5 from "@images/products/5.png";
 import thumb6 from "@images/products/6.png";
 import thumb7 from "@images/products/7.png";
 import thumb8 from "@images/products/8.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -89,9 +90,11 @@ export default function Home() {
             construção civil, tendo prestado serviços para uma empresa multinacional por mais
             de 08 anos.
           </p>
-          <DefaultButton onClick={() => {}} link href="empresa">
-            Saiba mais sobre a AçoRio <InfoIcon size={18} />
-          </DefaultButton>
+          <Link href="empresa">
+            <DefaultButton>
+              Saiba mais sobre a AçoRio <InfoIcon size={18} />
+            </DefaultButton>
+          </Link>
         </CompanyInfo>
       </SectionContainer>
       <FixedBackground backgroundUrl={StickyBg.src} />
@@ -116,9 +119,11 @@ export default function Home() {
               <p>TRELIÇAS DE FERRO</p>
             </ProductLink>
           </div>
-          <DefaultButton onClick={() => {}} link href="produtos">
-            Lista de Produtos <TollBoxIcon size={16} />
-          </DefaultButton>
+          <Link href="produtos">
+            <DefaultButton>
+              Lista de Produtos <TollBoxIcon size={16} />
+            </DefaultButton>
+          </Link>
         </DefaultContainer>
 
         <DefaultContainer>
