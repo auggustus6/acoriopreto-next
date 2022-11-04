@@ -19,16 +19,12 @@ interface HeaderNavProps {
 export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: HeaderNavProps) {
   const router = useRouter();
   const listenScroll = () => {
-    if (router.asPath === "/contato") {
-      return;
-    }
     setIsOnTop(window.scrollY > 180 ? true : false);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScroll, true);
-
-    if (router.asPath === "/contato") {
+    if (document.documentElement.scrollHeight > 1400) {
+      window.addEventListener("scroll", listenScroll, true);
     }
 
     return window.removeEventListener("scroll", listenScroll);
