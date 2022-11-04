@@ -16,6 +16,9 @@ export default createGlobalStyle`
     color: ${(p) => p.theme.blackText};
   }
 
+  .swal2-confirm, .swal2-styled{
+    background: ${(p) => p.theme.palette.primary.main} !important;
+  }
 
   h1{
     font-size: 2.1rem;
@@ -29,8 +32,8 @@ export default createGlobalStyle`
     font-size: 1.6rem;
   }
 
-  p{
-    font-size: 0.95rem;
+  p, option{
+    font-size: 1rem;
   }
 
   ul, ol{

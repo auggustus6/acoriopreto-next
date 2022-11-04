@@ -24,7 +24,7 @@ export default function Footer() {
     <Container>
       <Content>
         <div>
-          <strong>AçoRio - Ferro e aço sob medida para sua contrução</strong>
+          <strong>AçoRio - Ferro e aço sob medida para sua construção</strong>
           <p>
             Estrada Vicinal João Parise, Nº2020 - Brejo Alegre <br />
             São José do Rio Preto-SP - CEP: 15062-000

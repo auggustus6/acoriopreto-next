@@ -7,6 +7,7 @@ import { MdClose as CloseMenuIcon } from "react-icons/md";
 import AllLinks from "@mocs/menuLinks.json";
 import Link from "next/link";
 import { formatLink } from "src/util/formatLink";
+import { useRouter } from "next/router";
 
 interface HeaderNavProps {
   isOpen: boolean;
@@ -16,12 +17,20 @@ interface HeaderNavProps {
 }
 
 export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: HeaderNavProps) {
+  const router = useRouter();
   const listenScroll = () => {
+    if (router.asPath === "/contato") {
+      return;
+    }
     setIsOnTop(window.scrollY > 180 ? true : false);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", listenScroll, true);
+
+    if (router.asPath === "/contato") {
+    }
+
     return window.removeEventListener("scroll", listenScroll);
   }, []);
   return (
