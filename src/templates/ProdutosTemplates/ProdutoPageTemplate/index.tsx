@@ -1,10 +1,8 @@
-import FixedBackground from "@components/FixedBackground";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import Link from "next/link";
 import { Container, Content } from "./styles";
-import banner from "./banner-sobre.jpg";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
 import { formatLink } from "src/util/formatLink";
