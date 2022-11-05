@@ -27,6 +27,8 @@ export const Section = styled.section`
   img {
     border-radius: 5px;
     transition: transform 0.3s;
+    height: 100%;
+
     :hover {
       transform: scale(1.2);
     }
@@ -35,7 +37,7 @@ export const Section = styled.section`
   @media (max-width: 780px) {
     flex-direction: column-reverse !important;
 
-    div{
+    div {
       flex: none !important;
     }
 

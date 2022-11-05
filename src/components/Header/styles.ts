@@ -1,14 +1,23 @@
 import DefaultContainer from "@components/DefaultContainer";
 import styled from "styled-components";
 
-export const InfoContainer = styled(DefaultContainer)`
+interface InfoContainerProps {
+  $isOnTop: boolean;
+}
+
+export const InfoContainer = styled(DefaultContainer)<InfoContainerProps>`
   background: ${(p) => p.theme.palette.primary.main};
   color: ${(p) => p.theme.palette.primary.contrastText};
+  margin-bottom: ${(p) => (p.$isOnTop ? "7.3125rem" : "0")};
   white-space: nowrap;
 
   .content {
     justify-content: space-between;
     padding: 1.2rem 0rem;
+  }
+
+  p{
+    font-size: 0.8rem;
   }
 
   span {
@@ -57,7 +66,7 @@ export const Icons = styled.div`
   align-items: center;
   gap: 1rem;
   font-weight: 500;
-  a{
+  a {
     display: flex;
     align-items: center;
   }

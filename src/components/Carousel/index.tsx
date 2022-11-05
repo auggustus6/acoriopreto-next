@@ -11,6 +11,7 @@ export default function Carousel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    arrows: false,
   };
   return (
     <StyledSlider {...settings}>

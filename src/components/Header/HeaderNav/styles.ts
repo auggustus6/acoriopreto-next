@@ -9,16 +9,12 @@ interface NavProps {
 type isOpen = { open: boolean };
 
 export const StyledHeaderNav = styled(DefaultContainer)<NavProps>`
-  position: ${(p) => (p.top ? "sticky" : "static")};
+  position: ${(p) => (p.top ? "fixed" : "static")};
+  top: 0;
   background: white;
-  top: ${(p) => (p.top ? "0" : "-150px")};
   z-index: 2;
   transition: top 0.1s;
-  ${(p) =>
-    p.top &&
-    css`
-      box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
-    `};
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
 
   .content {
     align-items: center;

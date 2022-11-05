@@ -1,7 +1,7 @@
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import { Container, Section } from "../../styles/servicos/styles";
+import { Container, Section } from "./styles";
 import banner from "./img/topo-servicos.jpg";
 import thumbs1 from "./img/thumb1-large.png";
 import thumbs2 from "./img/thumb2.png";
@@ -46,7 +46,7 @@ export default function EmpresaPage() {
         </Section>
         <Section style={{ flexDirection: "row-reverse" }}>
           <div className="image">
-            <Image src={thumbs2.src} alt={""} width={750} height={1000} />
+            <Image src={thumbs2.src} alt={""} width={1170} height={780} />
           </div>
           <div>
             <h3>Serviços de engenharia em geral</h3>

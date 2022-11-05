@@ -30,7 +30,9 @@ export default function Footer() {
             São José do Rio Preto-SP - CEP: 15062-000
           </p>
           <span className="info-footer">
-            17 <strong>3238-3191</strong>
+            <a href="tel:173238-3191">
+              17 <strong>3238-3191</strong>
+            </a>
           </span>
         </div>
         <FooterNav>

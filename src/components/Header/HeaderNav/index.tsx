@@ -23,112 +23,115 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
   };
 
   useEffect(() => {
-    if (document.documentElement.scrollHeight > 1400) {
-      window.addEventListener("scroll", listenScroll, true);
-    }
+    // if (document.documentElement.scrollHeight > 1400) {
+    //   window.addEventListener("scroll", listenScroll, true);
+    // }
+    window.addEventListener("scroll", listenScroll, true);
 
     return window.removeEventListener("scroll", listenScroll);
   }, []);
   return (
     <>
-      <StyledHeaderNav top={isOnTop}>
-        <HeaderContent>
-          <Link href={"/"}>
-            <StyledImage
-              src={Logo.src}
-              top={isOnTop}
-              alt="Logo Aço Rio"
-              width={510}
-              height={173}
-            />
-          </Link>
-          <NavBar open={isOpen}>
-            <nav>
-              {isOpen && (
-                <CloseButton onClick={() => setIsOpen(false)}>
-                  <CloseMenuIcon size={34} />
-                </CloseButton>
-              )}
-              <ul>
-                <Link href="/" title="Página Inicial">
-                  <li>HOME</li>
-                </Link>
-                <Link href="empresa" title="Sobra a AçoRio">
-                  <li>EMPRESA</li>
-                </Link>
-                <li>
-                  {!isOpen ? (
-                    <span>
-                      <Link href="produtos" title="Produtos AçoRio">
-                        PRODUTOS
+      <div className="nav__header">
+        <StyledHeaderNav top={isOnTop}>
+          <HeaderContent>
+            <Link href={"/"}>
+              <StyledImage
+                src={Logo.src}
+                top={isOnTop}
+                alt="Logo Aço Rio"
+                width={510}
+                height={173}
+              />
+            </Link>
+            <NavBar open={isOpen}>
+              <nav>
+                {isOpen && (
+                  <CloseButton onClick={() => setIsOpen(false)}>
+                    <CloseMenuIcon size={34} />
+                  </CloseButton>
+                )}
+                <ul>
+                  <Link href="/" title="Página Inicial">
+                    <li>HOME</li>
+                  </Link>
+                  <Link href="/empresa" title="Sobra a AçoRio">
+                    <li>EMPRESA</li>
+                  </Link>
+                  <li>
+                    {!isOpen ? (
+                      <span>
+                        <Link href="/produtos" title="Produtos AçoRio">
+                          PRODUTOS
+                        </Link>
+                      </span>
+                    ) : (
+                      "PRODUTOS"
+                    )}
+                    <DownIcon size={14} className="hide-mobile" />
+                    <ul>
+                      {AllLinks.produtos.map((linkName, i) => {
+                        return (
+                          <Link href={`/produtos/${formatLink(linkName)}`} key={i}>
+                            <li>{linkName}</li>
+                          </Link>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                  <Link href="/servicos" title="Serviços AçoRio">
+                    <li>SERVIÇOS</li>
+                  </Link>
+                  <li>
+                    {!isOpen ? (
+                      <Link href="/obras" title="Obras AçoRio">
+                        OBRAS
                       </Link>
-                    </span>
-                  ) : (
-                    "PRODUTOS"
-                  )}
-                  <DownIcon size={14} className="hide-mobile" />
-                  <ul>
-                    {AllLinks.produtos.map((linkName, i) => {
-                      return (
-                        <Link href={`produtos/${formatLink(linkName)}`} key={i}>
-                          <li>{linkName}</li>
-                        </Link>
-                      );
-                    })}
-                  </ul>
-                </li>
-                <Link href="servicos" title="Serviços AçoRio">
-                  <li>SERVIÇOS</li>
-                </Link>
-                <li>
-                  {!isOpen ? (
-                    <Link href="obras" title="Obras AçoRio">
-                      OBRAS
-                    </Link>
-                  ) : (
-                    "OBRAS"
-                  )}
-                  <DownIcon size={14} className="hide-mobile" />
-                  <ul>
-                    {AllLinks.obras.map((linkName, i) => {
-                      return (
-                        <Link href={`produtos/${formatLink(linkName)}`} key={i}>
-                          <li>{linkName}</li>
-                        </Link>
-                      );
-                    })}
-                  </ul>
-                </li>
-                <li>
-                  {!isOpen ? (
-                    <Link href="informacoes" title="Informações AçoRio">
-                      INFORMAÇÕES
-                    </Link>
-                  ) : (
-                    "INFORMAÇÕES"
-                  )}
-                  <DownIcon size={14} className="hide-mobile" />
-                  <ul style={{ overflowY: "scroll" }}>
-                    {AllLinks.informacoes.map((linkName, i) => {
-                      return (
-                        <Link href={`informacoes/${formatLink(linkName)}`} key={i}>
-                          <li>{linkName}</li>
-                        </Link>
-                      );
-                    })}
-                  </ul>
-                </li>
-                <Link href="contato" title="Fale com a AçoRio">
-                  <li>CONTATO</li>
-                </Link>
-              </ul>
-            </nav>
-          </NavBar>
-        </HeaderContent>
-        <CloseButton onClick={() => setIsOpen(true)}>
-          <MenuIcon size={30} />
-        </CloseButton>
-      </StyledHeaderNav>
+                    ) : (
+                      "OBRAS"
+                    )}
+                    <DownIcon size={14} className="hide-mobile" />
+                    <ul>
+                      {AllLinks.obras.map((linkName, i) => {
+                        return (
+                          <Link href={`/produtos/${formatLink(linkName)}`} key={i}>
+                            <li>{linkName}</li>
+                          </Link>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                  <li>
+                    {!isOpen ? (
+                      <Link href="/informacoes" title="Informações AçoRio">
+                        INFORMAÇÕES
+                      </Link>
+                    ) : (
+                      "INFORMAÇÕES"
+                    )}
+                    <DownIcon size={14} className="hide-mobile" />
+                    <ul style={{ overflowY: "scroll" }}>
+                      {AllLinks.informacoes.map((linkName, i) => {
+                        return (
+                          <Link href={`/informacoes/${formatLink(linkName)}`} key={i}>
+                            <li>{linkName}</li>
+                          </Link>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                  <Link href="/contato" title="Fale com a AçoRio">
+                    <li>CONTATO</li>
+                  </Link>
+                </ul>
+              </nav>
+            </NavBar>
+          </HeaderContent>
+          <CloseButton onClick={() => setIsOpen(true)}>
+            <MenuIcon size={30} />
+          </CloseButton>
+        </StyledHeaderNav>
+      </div>
     </>
   );
 }

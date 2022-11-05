@@ -7,7 +7,7 @@ interface BackgroundProps {
 }
 
 const Background = styled.div<BackgroundProps>`
-  min-height: 24rem;
+  min-height: 23vw;
   background: url(${(p) => p.url});
   background-size: cover;
   background-position: center;

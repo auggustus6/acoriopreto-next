@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+          
         </Head>
         <body>
           <Main />

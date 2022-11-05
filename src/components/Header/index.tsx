@@ -14,7 +14,7 @@ export default function Header() {
   const [isOnTop, setIsOnTop] = useState(false);
   return (
     <>
-      <InfoContainer>
+      <InfoContainer $isOnTop={isOnTop}>
         <span>
           <p>
             <GeoIcon size={13} />

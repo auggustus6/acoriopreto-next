@@ -6,3 +6,4 @@ export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
 `;
+
