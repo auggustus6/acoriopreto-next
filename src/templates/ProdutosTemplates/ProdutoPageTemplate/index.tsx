@@ -7,7 +7,6 @@ import { Container, Content } from "./styles";
 import banner from "./banner-sobre.jpg";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
-import productsJson from "@mocs/products.json";
 import { formatLink } from "src/util/formatLink";
 
 interface ProdutoPageTemplateData {
@@ -38,7 +37,7 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
           <main>
             <h3>Confira:</h3>
             <Image
-              src={`/img/products-page/${link}.jpg`}
+              src={`/img/produtos-page/${link}.jpg`}
               width={300}
               height={300}
               alt={`imagem ilustrativa de ${title}`}

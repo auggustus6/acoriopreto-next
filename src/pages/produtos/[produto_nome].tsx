@@ -3,7 +3,7 @@ import React from "react";
 import ProdutoPageTemplate from "src/templates/ProdutosTemplates/ProdutoPageTemplate";
 import { formatLink } from "src/util/formatLink";
 import allLinksJson from "@mocs/menuLinks.json";
-import productsJson from "@mocs/products.json";
+import produtosJson from "@mocs/produtos.json";
 
 interface ProdutoPageData {
   product: {
@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const productsNames = allLinksJson.produtos.map((prod) => {
     return {
       params: {
-        productname: formatLink(prod),
+        produto_nome: formatLink(prod),
       },
     };
   });
@@ -34,9 +34,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // `getStaticPaths` requires using `getStaticProps`
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const { productname } = params;
+  const { produto_nome } = params;
 
-  const prod = productsJson.find((item) => item.link === productname);
+  const prod = produtosJson.find((item) => item.link === produto_nome);
 
   return {
     // Passed to the page component as props
