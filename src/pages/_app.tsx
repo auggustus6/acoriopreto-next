@@ -4,6 +4,7 @@ import { theme } from "@themes/mainTheme";
 import GlobalStyles from "@rootStyle/global";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-awesome-lightbox/build/style.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

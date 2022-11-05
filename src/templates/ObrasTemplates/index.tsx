@@ -19,7 +19,7 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-export const ImagesContainer = styled.section`
+const ImagesContainer = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -51,20 +51,20 @@ export const ImagesContainer = styled.section`
   }
 `;
 
-export default function ProdutosTemplates() {
-  const images = allLinks.produtos;
+export default function ObrasTemplate() {
+  const images = allLinks.obras;
   return (
     <>
       <Header />
       <Container>
-        <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
-        <h1>Produtos</h1>
-        <h3>Conheça nossos produtos:</h3>
+        <PagePath paths={[{ name: "Home", link: "/" }]}>Obras</PagePath>
+        <h1>Obras</h1>
+        <h3>Conheça nossos obras:</h3>
         <ImagesContainer>
           {images.map((img) => (
-            <Link key={img} href={`produtos/${formatLink(img)}`}>
+            <Link key={img} href={`/obras/${formatLink(img)}`}>
               <Image
-                src={`/img/produtos-page/${formatLink(img)}.jpg`}
+                src={`/img/constructions-page/${formatLink(img)}.jpg`}
                 width={215}
                 height={202}
                 alt={`foto ilustrativa de ${img.toLowerCase}`}

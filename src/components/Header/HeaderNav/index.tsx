@@ -94,7 +94,7 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     <ul>
                       {AllLinks.obras.map((linkName, i) => {
                         return (
-                          <Link href={`/produtos/${formatLink(linkName)}`} key={i}>
+                          <Link href={`/obras/${formatLink(linkName)}`} key={i}>
                             <li>{linkName}</li>
                           </Link>
                         );
