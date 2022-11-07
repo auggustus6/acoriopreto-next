@@ -19,6 +19,7 @@
     "react-slick": "^0.29.0",
     "sharp": "^0.31.1",
     "slick-carousel": "^1.8.1",
+    "string-similarity": "^4.0.4",
     "styled-components": "^5.3.6",
     "sweetalert2": "^11.6.5",
     "yup": "^0.32.11"
@@ -29,6 +30,7 @@
     "@types/react-dom": "18.0.8",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-slick": "^0.23.10",
+    "@types/string-similarity": "^4.0.0",
     "@types/styled-components": "^5.1.26",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",

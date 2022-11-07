@@ -7,6 +7,7 @@ import Link from "next/link";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";
+import ImageShowcase from "@components/ImageShowcase";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -52,7 +53,14 @@ const ImagesContainer = styled.section`
 `;
 
 export default function ObrasTemplate() {
-  const images = allLinks.obras;
+  const links = allLinks.obras.map((obra) => {
+
+    return {
+      image: `/img/construcao-page/${formatLink(obra)}.jpg`,
+      link: `/obras/${formatLink(obra)}`,
+      title: obra,
+    };
+  });
   return (
     <>
       <Header />
@@ -60,7 +68,7 @@ export default function ObrasTemplate() {
         <PagePath paths={[{ name: "Home", link: "/" }]}>Obras</PagePath>
         <h1>Obras</h1>
         <h3>Conheça nossos obras:</h3>
-        <ImagesContainer>
+        {/* <ImagesContainer>
           {images.map((img) => (
             <Link key={img} href={`/obras/${formatLink(img)}`}>
               <Image
@@ -72,7 +80,8 @@ export default function ObrasTemplate() {
               <span>{img}</span>
             </Link>
           ))}
-        </ImagesContainer>
+        </ImagesContainer> */}
+        <ImageShowcase links={links} />
       </Container>
       <Footer />
     </>

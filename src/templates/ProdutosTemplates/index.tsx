@@ -19,7 +19,7 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-export const ImagesContainer = styled.section`
+const ImagesContainer = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;

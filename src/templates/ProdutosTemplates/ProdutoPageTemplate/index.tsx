@@ -6,6 +6,7 @@ import { Container, Content } from "./styles";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
 import { formatLink } from "src/util/formatLink";
+import AsideNav from "@components/AsideNav";
 
 interface ProdutoPageTemplateData {
   product: {
@@ -52,24 +53,7 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
               </ul>
             )}
           </main>
-          <aside>
-            <h3>PRODUTOS</h3>
-            <ul>
-              {allLinksJson.produtos.map((prod) => (
-                // <li key={prod} className="active-nav">
-                <li
-                  key={prod}
-                  className={`${prod?.toLowerCase() == title?.toLowerCase() && "active-nav"}`}
-                >
-                  <Link href={`${formatLink(prod)}`}>{prod}</Link>
-                </li>
-              ))}
-              <span>ENTRE EM CONTATO PELO TELEFONE</span>
-              <p>
-                <a href="tel:17 3238-3191">17 3238-3191</a>
-              </p>
-            </ul>
-          </aside>
+          <AsideNav title="PRODUTOS" links={allLinksJson.produtos} />
         </Content>
       </Container>
       <Footer />

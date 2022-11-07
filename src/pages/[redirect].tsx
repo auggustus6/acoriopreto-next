@@ -13,7 +13,6 @@ interface RedirectProps {
 
 export default function Redirect({ link, type }: RedirectProps) {
   const router = useRouter();
-  console.log(link, type);
 
   useEffect(() => {
     if (link) {
