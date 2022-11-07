@@ -4,10 +4,15 @@ import PagePath from "@components/PagePath";
 import { Container, Main, MapContainer } from "./styles";
 
 import { CustomForm } from "./components/MyForm";
+import HeadMeta from "@components/HeadMeta";
 
 export default function ContatoTemplate() {
   return (
     <>
+      <HeadMeta
+        description="Entre em contato e envie sua mensagem pelo formulário e logo entraremos em contato. Qualquer dúvida estamos a disposição pelo email ou telefone"
+        pageTitle="Contato - AçoRio"
+      />
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Contato</PagePath>

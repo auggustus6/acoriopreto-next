@@ -3,13 +3,13 @@ import Image from "next/image";
 import styled, { css } from "styled-components";
 
 interface NavProps {
-  top: boolean;
+  $isOnTop: boolean;
 }
 
 type isOpen = { open: boolean };
 
 export const StyledHeaderNav = styled(DefaultContainer)<NavProps>`
-  position: ${(p) => (p.top ? "fixed" : "static")};
+  position: ${(p) => (p.$isOnTop ? "fixed" : "static")};
   top: 0;
   background: white;
   z-index: 2;
@@ -36,13 +36,13 @@ export const HeaderContent = styled.header`
 `;
 
 export const StyledImage = styled(Image)<NavProps>`
-  height: ${(p) => (p.top ? "3rem" : "5rem")};
+  height: ${(p) => (p.$isOnTop ? "3rem" : "5rem")};
   width: auto;
   margin: 1rem 0;
   transition: height 0.3s;
 
   @media (max-width: 900px) {
-    height: ${(p) => (p.top ? "2.4rem" : "4rem")};
+    height: ${(p) => (p.$isOnTop ? "2.4rem" : "4rem")};
   }
 `;
 

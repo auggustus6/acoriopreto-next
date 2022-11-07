@@ -7,6 +7,7 @@ import allLinksJson from "@mocs/menuLinks.json";
 
 import AsideNav from "@components/AsideNav";
 import ImagesContainer from "@components/ImagesContainer";
+import HeadMeta from "@components/HeadMeta";
 
 interface ObraPageData {
   obra: {
@@ -22,6 +23,8 @@ export default function ObraPageTemplate({ obra }: ObraPageData) {
 
   return (
     <>
+      <HeadMeta description={titulo + " - " + titulo.slice(0,100)+ "... Saiba mais."} pageTitle={titulo} />
+
       <Header />
       <Container>
         <PagePath

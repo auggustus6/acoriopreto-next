@@ -6,10 +6,15 @@ import banner from "./img/topo-servicos.jpg";
 import thumbs1 from "./img/thumb1-large.png";
 import thumbs2 from "./img/thumb2.png";
 import Image from "next/image";
+import HeadMeta from "@components/HeadMeta";
 
 export default function EmpresaPage() {
   return (
     <>
+      <HeadMeta
+        description="Serviços - nosso cliente adquire de maneira exata todos os elementos estruturais que a sua obra necessita, evitando compras em quantidades... Saiba mais."
+        pageTitle="Serviços - AçoRio"
+      />
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Serviços</PagePath>

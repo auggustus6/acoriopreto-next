@@ -8,6 +8,7 @@ import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";
 import ImageShowcase from "@components/ImageShowcase";
+import HeadMeta from "@components/HeadMeta";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -30,6 +31,8 @@ export default function ObrasTemplate() {
   });
   return (
     <>
+      <HeadMeta pageTitle={links[0].title} />
+
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Obras</PagePath>

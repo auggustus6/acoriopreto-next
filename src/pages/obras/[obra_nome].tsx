@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import ProdutoPageTemplate from "src/templates/ProdutosTemplates/ProdutoPageTemplate";
 import { formatLink } from "src/util/formatLink";
 import allLinksJson from "@mocs/menuLinks.json";
 import obrasJson from "@mocs/obras.json";

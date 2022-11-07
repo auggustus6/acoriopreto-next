@@ -13,6 +13,7 @@ import { FaTwitter as TwitterIcon } from "react-icons/fa";
 import { AiOutlineFacebook as FaceBookIcon } from "react-icons/ai";
 import ShowCities from "@components/ShowCities";
 import { formatLink } from "src/util/formatLink";
+import HeadMeta from "@components/HeadMeta";
 
 type ContentType = string | string[];
 
@@ -70,6 +71,10 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
 
   return (
     <>
+      <HeadMeta
+        description={titulo + " - " + post[0].conteudo.slice(0, 100) + "... Saiba mais."}
+        pageTitle={titulo}
+      />
       <Header />
       <Container>
         <PagePath
@@ -103,7 +108,6 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
               href={`https://www.facebook.com/sharer/sharer.php?u=${`https%3A%2F%2Fwww.acoriopreto.com.br%2F${formatLink(
                 link
               )}`}&display=popup&ref=plugin&src=like&kid_directed_site=0`}
-              // href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.acoriopreto.com.br%2Faco-construcao&display=popup&ref=plugin&src=like&kid_directed_site=0"
               className="facebook-share"
               target="_blank"
               rel="noreferrer"
@@ -115,7 +119,6 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
               href={`https://twitter.com/intent/tweet?text=${encodeURI(
                 titulo
               )}&url=${encodeURI(`https://www.acoriopreto.com.br/${link}`)}`}
-              // href="https://twitter.com/intent/tweet?text=A%C3%A7o%20para%20constru%C3%A7%C3%A3o%20-%20A%C3%A7oRio&url=https://www.acoriopreto.com.br/aco-construcao"
               className="twitter-share"
               target="_blank"
               rel="noreferrer"

@@ -7,6 +7,7 @@ import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
 import { formatLink } from "src/util/formatLink";
 import AsideNav from "@components/AsideNav";
+import HeadMeta from "@components/HeadMeta";
 
 interface ProdutoPageTemplateData {
   product: {
@@ -21,6 +22,10 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
   const { link, title, paragraphs, list } = product;
   return (
     <>
+      <HeadMeta
+        description={title + " - " + title.slice(0, 100) + "... Saiba mais."}
+        pageTitle={title}
+      />
       <Header />
       <Container>
         <PagePath

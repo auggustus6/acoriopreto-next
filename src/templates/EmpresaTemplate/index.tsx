@@ -6,10 +6,15 @@ import Link from "next/link";
 import { Container, AboutText } from "./styles";
 import banner from "./banner-sobre.jpg";
 import Image from "next/image";
+import HeadMeta from "@components/HeadMeta";
 
 export default function EmpresaPage() {
   return (
     <>
+      <HeadMeta
+        description="Empresas que as atendam de forma flexível. visando o bem estar dos clientes, colaboradores, do futuro, trabalhando sempre preocupados com o meio... Saiba mais."
+        pageTitle="Empresa - AçoRio"
+      />
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Empresa</PagePath>

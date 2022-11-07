@@ -8,6 +8,7 @@ import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import informacoesJson from "@mocs/informacoes.json";
 import ImageShowcase from "@components/ImageShowcase";
+import HeadMeta from "@components/HeadMeta";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -38,6 +39,7 @@ export default function InformacoesTemplates() {
   });
   return (
     <>
+      <HeadMeta pageTitle="Informações - AçoRio" />
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
