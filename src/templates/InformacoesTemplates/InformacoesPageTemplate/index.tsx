@@ -7,7 +7,12 @@ import AsideNav from "@components/AsideNav";
 import ImagesContainer from "@components/ImagesContainer";
 import React from "react";
 import stringSimilarity from "string-similarity";
+import informacoesJson from "@mocs/informacoes.json";
 import SimiliarPosts from "@components/SimiliarPosts";
+import { FaTwitter as TwitterIcon } from "react-icons/fa";
+import { AiOutlineFacebook as FaceBookIcon } from "react-icons/ai";
+import ShowCities from "@components/ShowCities";
+import { formatLink } from "src/util/formatLink";
 
 type ContentType = string | string[];
 
@@ -46,9 +51,22 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
 
   const similiarPosts = stringSimilarity
     .findBestMatch(titulo.toUpperCase(), allLinksJson.informacoes)
-    .ratings.filter((item) => titulo.toUpperCase() != item.target && item.rating >= 0.6)
+    .ratings.filter((item) => titulo.toUpperCase() != item.target && item.rating >= 0.3)
     .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
+    .slice(0, 3)
+    .map((item) => item.target);
+
+  // posts: {
+  //   title: string;
+  //   image: string;
+  //   link: string;
+  // }[];
+
+  const filteredPosts = informacoesJson
+    .filter((item) => similiarPosts.includes(item.titulo.toUpperCase()))
+    .map((item) => {
+      return { title: item.titulo, image: item.imagens[0], link: item.link };
+    });
 
   return (
     <>
@@ -74,7 +92,56 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
 
           <AsideNav title="INFORMAÇÕES" links={allLinksJson.informacoes} />
         </Content>
-        {/* <SimiliarPosts path="/informacoes"  posts={[]} /> */}
+        <div>
+          <h3 className="h3-title">Para saber mais sobre Aço para construção</h3>
+          <p className="contact">
+            Ligue para 17 3238-3191 ou clique aqui e entre em contato por email.
+          </p>
+          <small>Gostou? compartilhe!</small>
+          <div className="social-buttons">
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${`https%3A%2F%2Fwww.acoriopreto.com.br%2F${formatLink(
+                link
+              )}`}&display=popup&ref=plugin&src=like&kid_directed_site=0`}
+              // href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.acoriopreto.com.br%2Faco-construcao&display=popup&ref=plugin&src=like&kid_directed_site=0"
+              className="facebook-share"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaceBookIcon size={16} />
+              Compartilhar
+            </a>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURI(
+                titulo
+              )}&url=${encodeURI(`https://www.acoriopreto.com.br/${link}`)}`}
+              // href="https://twitter.com/intent/tweet?text=A%C3%A7o%20para%20constru%C3%A7%C3%A3o%20-%20A%C3%A7oRio&url=https://www.acoriopreto.com.br/aco-construcao"
+              className="twitter-share"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <TwitterIcon size={16} />
+              Tweet
+            </a>
+          </div>
+        </div>
+        <h3 className="h3-title">Publicações Relacionadas</h3>
+        <SimiliarPosts
+          path="/informacoes"
+          posts={filteredPosts}
+          imageFolderPath={"/img/informacoes-page"}
+        />
+
+        <h3 style={{ marginTop: "2rem" }} className="h3-title">
+          Principais cidades e regiões do Brasil onde a AçoRio atende Aço para construção:
+        </h3>
+        <ShowCities />
+        <small className="small-text-copyright">
+          O conteúdo do texto desta página é de direito reservado. Sua reprodução, parcial ou
+          total, mesmo citando nossos links, é proibida sem a autorização do autor. Crime de
+          violação de direito autoral – artigo 184 do Código Penal – Lei 9610/98 - Lei de
+          direitos autorais.
+        </small>
       </Container>
       <Footer />
     </>

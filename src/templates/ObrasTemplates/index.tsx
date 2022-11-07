@@ -20,41 +20,8 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-const ImagesContainer = styled.section`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 1rem;
-  gap: 2rem;
-
-  a:last-child {
-    margin-right: auto;
-  }
-
-  a {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    font-size: 0.8rem;
-    overflow: hidden;
-    font-weight: 600;
-    gap: 0.4rem;
-    color: black;
-    :hover {
-      opacity: 0.8;
-    }
-
-    img {
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-    }
-  }
-`;
-
 export default function ObrasTemplate() {
   const links = allLinks.obras.map((obra) => {
-
     return {
       image: `/img/construcao-page/${formatLink(obra)}.jpg`,
       link: `/obras/${formatLink(obra)}`,
@@ -68,19 +35,7 @@ export default function ObrasTemplate() {
         <PagePath paths={[{ name: "Home", link: "/" }]}>Obras</PagePath>
         <h1>Obras</h1>
         <h3>Conheça nossos obras:</h3>
-        {/* <ImagesContainer>
-          {images.map((img) => (
-            <Link key={img} href={`/obras/${formatLink(img)}`}>
-              <Image
-                src={`/img/constructions-page/${formatLink(img)}.jpg`}
-                width={215}
-                height={202}
-                alt={`foto ilustrativa de ${img.toLowerCase}`}
-              />
-              <span>{img}</span>
-            </Link>
-          ))}
-        </ImagesContainer> */}
+
         <ImageShowcase links={links} />
       </Container>
       <Footer />

@@ -24,6 +24,8 @@ const Container = styled.div`
   a {
     display: flex;
     align-items: center;
+    text-align: start;
+
     gap: 1rem;
     padding: 1rem 1.4rem;
     height: 6rem;
@@ -39,9 +41,9 @@ const Container = styled.div`
   }
 
   img {
+    min-width: 82px;
+    min-height: 82px;
     max-width: 82px;
-    width: auto;
-    height: 100%;
     max-height: 82px;
 
     object-fit: contain;
@@ -49,17 +51,12 @@ const Container = styled.div`
   }
 `;
 
-export default function SimiliarPosts({ path, posts,imageFolderPath }: SimiliarPosts) {
+export default function SimiliarPosts({ path, posts, imageFolderPath }: SimiliarPosts) {
   return (
     <Container>
       {posts.map((post) => (
-        <Link href={`${path}/${formatLink(post.link)}`}>
-          <Image
-            src={post.image}
-            width={82}
-            height={82}
-            alt={""}
-          />
+        <Link key={post.title} href={`${path}/${post.link}`}>
+          <Image src={`${imageFolderPath}/${post.image}`} width={82} height={82} alt={""} />
           <h3>{post.title}</h3>
         </Link>
       ))}

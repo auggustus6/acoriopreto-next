@@ -41,25 +41,25 @@ export default function Footer() {
               <Link href="/">
                 <li>Home</li>
               </Link>
-              <Link href="empresa">
+              <Link href="/empresa">
                 <li>Empresa</li>
               </Link>
-              <Link href="produtos">
+              <Link href="/produtos">
                 <li>Produtos</li>
               </Link>
-              <Link href="servicos">
+              <Link href="/servicos">
                 <li>Serviços</li>
               </Link>
-              <Link href="obras">
+              <Link href="/obras">
                 <li>Obras</li>
               </Link>
-              <Link href="informacoes">
+              <Link href="/informacoes">
                 <li>Informações</li>
               </Link>
-              <Link href="contato">
+              <Link href="/contato">
                 <li>Contato</li>
               </Link>
-              <Link href="mapa-site">
+              <Link href="/mapa-site">
                 <li>Mapa do site</li>
               </Link>
             </ul>
