@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import CarouselItem from "./CarouselItem";
 import { StyledSlider } from "./styles";
 import bg1 from "@images/banner.jpeg";
-
+import bg2 from "@images/banner2.png";
 
 export default function Carousel() {
   const settings = {
@@ -16,6 +16,7 @@ export default function Carousel() {
   return (
     <StyledSlider {...settings}>
       <CarouselItem imageLink={bg1.src} />
+      <CarouselItem imageLink={bg2.src} />
     </StyledSlider>
   );
 }
