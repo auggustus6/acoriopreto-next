@@ -9,4 +9,5 @@ export const Container = styled.button`
   color: ${(p) => p.theme.palette.secondary.contrastText};
   font-size: 0.9rem;
   margin: 0 auto;
+  border-radius: 6px;
 `;
