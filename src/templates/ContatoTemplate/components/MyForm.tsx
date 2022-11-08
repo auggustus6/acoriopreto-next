@@ -69,6 +69,19 @@ const Select = styled.select`
   padding-left: 1rem;
 `;
 
+const phoneNumber = (phone: string) => {
+  phone = phone.replace(/[^\d]/g, "");
+
+  if (phone.length > 2) {
+    phone = phone.replace(/^(\d{2})(\d*)/, "($1) $2");
+  }
+  if (phone.length > 9) {
+    phone = phone.replace(/^(.*)(\d{4})$/, "$1-$2");
+  }
+
+  return phone;
+};
+
 const MyForm = (props: any) => {
   const { values, touched, errors, handleChange, handleSubmit } = props;
   return (
@@ -134,7 +147,7 @@ const formSchema = Yup.object().shape({
 
 export const CustomForm = withFormik({
   mapPropsToValues: () => ({ name: "", email: "", phone: "", message: "", howfind: "" }),
-  handleSubmit: async (values, { setSubmitting, resetForm }) => {
+  handleSubmit: async (values, { setSubmitting, resetForm, }) => {
     const res = await fetch("api/send_email", {
       method: "POST",
       mode: "cors",

@@ -28,6 +28,10 @@ const ImagesContainer = styled.section`
   margin-top: 1rem;
   gap: 2rem;
 
+  span{
+    max-width: 200px;
+  }
+
   a:last-child {
     margin-right: auto;
   }
@@ -52,21 +56,21 @@ const ImagesContainer = styled.section`
   }
 `;
 
-export default function ProdutosTemplates() {
-  const images = allLinks.produtos;
+export default function ImpermeabilizanteTemplate() {
+  const images = allLinks.impermeabilizantes;
   return (
     <>
-      <HeadMeta pageTitle="Produtos - AçoRio"/>
+      <HeadMeta pageTitle="Impermeabilizantes - AçoRio" />
       <Header />
       <Container>
-        <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
-        <h1>Produtos</h1>
-        <h3>Conheça nossos produtos:</h3>
+        <PagePath paths={[{ name: "Home", link: "/" }]}>Impermeabilizantes</PagePath>
+        <h1>Impermeabilizantes</h1>
+        <h3>Conheça nossos impermeabilizantes:</h3>
         <ImagesContainer>
           {images.map((img) => (
-            <Link key={img} href={`produtos/${formatLink(img)}`}>
+            <Link key={img} href={`/impermeabilizantes/${formatLink(img)}`}>
               <Image
-                src={`/img/produtos-page/${formatLink(img)}.jpg`}
+                src={`/img/impermeabilizantes-page/${formatLink(img)}.jpg`}
                 width={215}
                 height={202}
                 alt={`foto ilustrativa de ${img.toLowerCase}`}

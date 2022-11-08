@@ -19,6 +19,10 @@ export const StyledHeaderNav = styled(DefaultContainer)<NavProps>`
   .content {
     align-items: center;
   }
+
+  .active {
+    border-bottom: 2px solid ${(p) => p.theme.palette.primary.main};
+  }
 `;
 
 export const HeaderContent = styled.header`
@@ -28,7 +32,7 @@ export const HeaderContent = styled.header`
   justify-content: space-between;
   width: 100%;
 
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     grid-column-start: 1;
     grid-row-start: 1;
     justify-self: center;
@@ -36,13 +40,13 @@ export const HeaderContent = styled.header`
 `;
 
 export const StyledImage = styled(Image)<NavProps>`
-  height: ${(p) => (p.$isOnTop ? "3rem" : "5rem")};
+  height: ${(p) => (p.$isOnTop ? "3rem" : "4rem")};
   width: auto;
   margin: 1rem 0;
   transition: height 0.3s;
 
   @media (max-width: 900px) {
-    height: ${(p) => (p.$isOnTop ? "2.4rem" : "4rem")};
+    height: ${(p) => (p.$isOnTop ? "2.4rem" : "3rem")};
   }
 `;
 
@@ -55,7 +59,7 @@ export const NavBar = styled.div<isOpen>`
     display: flex;
     align-items: center;
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       font-size: 0.8rem;
     }
   }
@@ -93,7 +97,7 @@ export const NavBar = styled.div<isOpen>`
   nav ul {
     display: flex;
     gap: 0.2rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   nav ul li {
@@ -113,7 +117,7 @@ export const NavBar = styled.div<isOpen>`
     top: 0;
     z-index: 10;
     /* responsividade aqui */
-    @media (max-width: 780px) {
+    @media (max-width: 980px) {
       visibility: ${(p) => (p.open ? "visible" : "hidden")};
       position: fixed;
       right: ${(p) => (p.open ? "0" : "-100vw")};
@@ -178,7 +182,7 @@ export const CloseButton = styled.div`
   display: none;
   transition: transform 0.2s;
 
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     display: block;
   }
 

@@ -53,12 +53,12 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                 )}
                 <ul>
                   <Link href="/" title="Página Inicial">
-                    <li>HOME</li>
+                    <li className={router.pathname == "/" ? "active" : ""}>HOME</li>
                   </Link>
                   <Link href="/empresa" title="Sobra a AçoRio">
-                    <li>EMPRESA</li>
+                    <li className={router.pathname == "/empresa" ? "active" : ""}>EMPRESA</li>
                   </Link>
-                  <li>
+                  <li className={router.pathname.includes("/produtos") ? "active" : ""}>
                     {!isOpen ? (
                       <span>
                         <Link href="/produtos" title="Produtos AçoRio">
@@ -79,10 +79,35 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                       })}
                     </ul>
                   </li>
+                  <li
+                    className={router.pathname.includes("/impermeabilizantes") ? "active" : ""}
+                  >
+                    {!isOpen ? (
+                      <span>
+                        <Link href="/impermeabilizantes" title="Impermeabilizantes AçoRio">
+                          IMPERMEABILIZANTES
+                        </Link>
+                      </span>
+                    ) : (
+                      "IMPERMEABILIZANTES"
+                    )}
+                    <DownIcon size={14} className="hide-mobile" />
+                    <ul>
+                      {AllLinks.impermeabilizantes.map((linkName, i) => {
+                        return (
+                          <Link href={`/impermeabilizantes/${formatLink(linkName)}`} key={i}>
+                            <li>{linkName}</li>
+                          </Link>
+                        );
+                      })}
+                    </ul>
+                  </li>
                   <Link href="/servicos" title="Serviços AçoRio">
-                    <li>SERVIÇOS</li>
+                    <li className={router.pathname == "/servicos" ? "active" : ""}>
+                      SERVIÇOS
+                    </li>
                   </Link>
-                  <li>
+                  <li className={router.pathname.includes("/obras") ? "active" : ""}>
                     {!isOpen ? (
                       <Link href="/obras" title="Obras AçoRio">
                         OBRAS
@@ -101,7 +126,7 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                       })}
                     </ul>
                   </li>
-                  <li>
+                  <li className={router.pathname.includes("/informacoes") ? "active" : ""}>
                     {!isOpen ? (
                       <Link href="/informacoes" title="Informações AçoRio">
                         INFORMAÇÕES
@@ -121,7 +146,7 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     </ul>
                   </li>
                   <Link href="/contato" title="Fale com a AçoRio">
-                    <li>CONTATO</li>
+                    <li className={router.pathname == "/contato" ? "active" : ""}>CONTATO</li>
                   </Link>
                 </ul>
               </nav>
