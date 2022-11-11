@@ -7,10 +7,7 @@ export const Container = styled(DefaultContainer)`
     flex-direction: column;
     align-items: flex-start;
   }
-  img {
-    width: 100%;
-    height: auto;
-  }
+
   h1,
   h3 {
     color: ${(p) => p.theme.palette.secondary.main};
@@ -27,7 +24,14 @@ export const Section = styled.section`
   img {
     border-radius: 5px;
     transition: transform 0.3s;
-    height: 100%;
+
+    width: 100%;
+    height: auto;
+    @media (max-width: 769px) {
+      width: 90vw !important;
+      height: 90vw !important;
+      object-fit: cover;
+    }
 
     :hover {
       transform: scale(1.2);

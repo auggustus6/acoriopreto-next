@@ -17,7 +17,7 @@ export default function EmpresaPage() {
           <h1>Serviços</h1>
           <Image
             src="/img/servicos.png"
-            style={{ width: "100%", height: "315px" }}
+            style={{ width: "100%", height: "auto" }}
             width={1000}
             height={315}
             alt="Banner Topo"
