@@ -16,7 +16,6 @@ export default function Carousel() {
       <CarouselItem imageLink="/img/banner.jpeg" />
       <CarouselItem imageLink="/img/banner2.png" />
       <CarouselItem imageLink="/img/banner3.png" />
-      <CarouselItem imageLink="/img/banner4.png" />
     </StyledSlider>
   );
 }

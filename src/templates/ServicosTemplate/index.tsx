@@ -1,8 +1,5 @@
 import PagePath from "@components/PagePath";
 import { Container, Section } from "./styles";
-import banner from "./img/topo-servicos.jpg";
-import thumbs1 from "./img/thumb1-large.png";
-import thumbs2 from "./img/thumb2.png";
 import Image from "next/image";
 import MainLayout from "../MainLayout";
 
@@ -18,10 +15,10 @@ export default function EmpresaPage() {
         <Container>
           <PagePath paths={[{ name: "Home", link: "/" }]}>Serviços</PagePath>
           <h1>Serviços</h1>
-          <Image src={banner.src} width={1000} height={315} alt="Banner Topo" />
+          <Image src="/img/topo-servicos.jpg" width={1000} height={315} alt="Banner Topo" />
           <Section>
             <div className="image">
-              <Image src={thumbs1.src} alt={""} width={750} height={1000} />
+              <Image src="/img/thumb1-large.png" alt={""} width={750} height={1000} />
             </div>
             <div>
               <h3>Projeto de armação de ferragem</h3>
@@ -50,7 +47,7 @@ export default function EmpresaPage() {
           </Section>
           <Section style={{ flexDirection: "row-reverse" }}>
             <div className="image">
-              <Image src={thumbs2.src} alt={""} width={1170} height={780} />
+              <Image src="/img/thumb2.png" alt={""} width={1170} height={780} />
             </div>
             <div>
               <h3>Serviços de engenharia em geral</h3>

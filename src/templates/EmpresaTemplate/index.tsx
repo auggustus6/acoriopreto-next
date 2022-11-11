@@ -1,6 +1,5 @@
 import PagePath from "@components/PagePath";
 import { Container, AboutText } from "./styles";
-import banner from "./banner-sobre.jpg";
 import Image from "next/image";
 import MainLayout from "../MainLayout";
 
@@ -17,7 +16,7 @@ export default function EmpresaPage() {
         <h1>Empresa</h1>
         <h3>Sobre nós</h3>
         {/* <FixedBackground backgroundUrl={Banner.src} customHeight={315} /> */}
-        <Image src={banner.src} width={1000} height={315} alt="Banner Aço Rio" />
+        <Image src="/img/empresa.png" width={1000} height={315} alt="Banner Aço Rio" />
 
         <AboutText>
           <p>
