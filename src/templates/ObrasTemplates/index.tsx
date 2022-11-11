@@ -2,8 +2,6 @@ import DefaultContainer from "@components/DefaultContainer";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Image from "next/image";
-import Link from "next/link";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";

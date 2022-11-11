@@ -69,7 +69,8 @@ export const Content = styled.article`
     position: absolute;
     right: 8px;
     top: 4px;
-    color: #999;
+    color: #666;
+    cursor: pointer;
   }
 
   img {

@@ -3,14 +3,14 @@ import Lightbox from "react-awesome-lightbox";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Link from "next/link";
 import { Container, Content } from "./styles";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
-import { formatLink } from "src/util/formatLink";
 import AsideNav from "@components/AsideNav";
 import HeadMeta from "@components/HeadMeta";
 import { useState } from "react";
+
+import { HiMagnifyingGlass as ZoomIcon } from "react-icons/hi2";
 
 interface ImpermeabilizantePageData {
   impermeabiliazante: {
@@ -55,7 +55,11 @@ export default function ImpermeabilizantePageTemplate({
                 alt={`imagem ilustrativa de ${titulo}`}
                 onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
               />
-              <small>clique na imagem para dar zoom</small>
+              <small
+                onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
+              >
+                <ZoomIcon size={24} />
+              </small>
             </div>
 
             <div dangerouslySetInnerHTML={{ __html: conteudo }}></div>

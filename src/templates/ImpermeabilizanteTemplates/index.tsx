@@ -6,8 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
-import allLinks from "@mocs/menuLinks.json";
 import HeadMeta from "@components/HeadMeta";
+import ImageShowcase from "@components/ImageShowcase";
+import impermeabilizantesJson from "@mocs/impermeabilizantes.json";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -20,44 +21,16 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-const ImagesContainer = styled.section`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 1rem;
-  gap: 2rem;
 
-  span{
-    max-width: 200px;
-  }
-
-  a:last-child {
-    margin-right: auto;
-  }
-
-  a {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    font-size: 0.8rem;
-    overflow: hidden;
-    font-weight: 600;
-    gap: 0.4rem;
-    color: black;
-    :hover {
-      opacity: 0.8;
-    }
-
-    img {
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-    }
-  }
-`;
 
 export default function ImpermeabilizanteTemplate() {
-  const images = allLinks.impermeabilizantes;
+  const links = impermeabilizantesJson.map((item) => {
+    return {
+      image: `/img/impermeabilizantes-page/${item.imagem}`,
+      link: `/impermeabilizantes/${item.link}`,
+      title: item.titulo,
+    };
+  });
   return (
     <>
       <HeadMeta pageTitle="Impermeabilizantes - AçoRio" />
@@ -66,19 +39,8 @@ export default function ImpermeabilizanteTemplate() {
         <PagePath paths={[{ name: "Home", link: "/" }]}>Impermeabilizantes</PagePath>
         <h1>Impermeabilizantes</h1>
         <h3>Conheça nossos impermeabilizantes:</h3>
-        <ImagesContainer>
-          {images.map((img) => (
-            <Link key={img} href={`/impermeabilizantes/${formatLink(img)}`}>
-              <Image
-                src={`/img/impermeabilizantes-page/${formatLink(img)}.jpg`}
-                width={215}
-                height={202}
-                alt={`foto ilustrativa de ${img.toLowerCase}`}
-              />
-              <span>{img}</span>
-            </Link>
-          ))}
-        </ImagesContainer>
+        <ImageShowcase links={links} />
+
       </Container>
       <Footer />
     </>

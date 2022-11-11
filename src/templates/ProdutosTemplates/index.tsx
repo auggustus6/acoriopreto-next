@@ -8,6 +8,7 @@ import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";
 import HeadMeta from "@components/HeadMeta";
+import ImageShowcase from "@components/ImageShowcase";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -20,61 +21,26 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-const ImagesContainer = styled.section`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 1rem;
-  gap: 2rem;
-
-  a:last-child {
-    margin-right: auto;
-  }
-
-  a {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    font-size: 0.8rem;
-    overflow: hidden;
-    font-weight: 600;
-    gap: 0.4rem;
-    color: black;
-    :hover {
-      opacity: 0.8;
-    }
-
-    img {
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-    }
-  }
-`;
-
 export default function ProdutosTemplates() {
   const images = allLinks.produtos;
+  const links = images.map((item) => {
+    return {
+      image: `/img/produtos-page/${formatLink(item)}.jpg`,
+      link: `produtos/${formatLink(item)}`,
+      title: item,
+    };
+  });
+
   return (
     <>
-      <HeadMeta pageTitle="Produtos - AçoRio"/>
+      <HeadMeta pageTitle="Produtos - AçoRio" />
       <Header />
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
         <h1>Produtos</h1>
         <h3>Conheça nossos produtos:</h3>
-        <ImagesContainer>
-          {images.map((img) => (
-            <Link key={img} href={`produtos/${formatLink(img)}`}>
-              <Image
-                src={`/img/produtos-page/${formatLink(img)}.jpg`}
-                width={215}
-                height={202}
-                alt={`foto ilustrativa de ${img.toLowerCase}`}
-              />
-              <span>{img}</span>
-            </Link>
-          ))}
-        </ImagesContainer>
+        <ImageShowcase links={links} />
+        
       </Container>
       <Footer />
     </>

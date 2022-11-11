@@ -7,13 +7,9 @@ const ImagesContainer = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 1rem;
   gap: 2rem;
-
-  a:last-child {
-    margin-right: auto;
-  }
 
   a {
     display: flex;

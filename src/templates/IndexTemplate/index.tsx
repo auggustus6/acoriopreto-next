@@ -36,6 +36,7 @@ import thumb7 from "@images/products/7.png";
 import thumb8 from "@images/products/8.png";
 import Link from "next/link";
 import HeadMeta from "@components/HeadMeta";
+import WppFloatIcon from "@components/WppFloatIcon";
 
 export default function Home() {
   return (

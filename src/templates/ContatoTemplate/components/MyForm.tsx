@@ -47,6 +47,7 @@ const Form = styled.form`
     padding: 0;
     margin-top: 1rem;
     transition: 0.2s;
+    border-radius: 7px;
     :hover {
       background: ${(p) => p.theme.palette.primary.main};
       color: white;

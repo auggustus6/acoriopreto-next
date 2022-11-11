@@ -33,12 +33,10 @@ export const Content = styled.footer`
   span strong {
     font-size: 1.2rem;
   }
-
   nav {
-    @media (max-width: 450px) {
-      margin: 0;
-      width: 90vw;
-    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   nav ul {
@@ -47,11 +45,18 @@ export const Content = styled.footer`
     gap: 0.6rem;
     white-space: nowrap;
 
-    @media (max-width: 450px) {
+    @media (max-width: 669px) {
       flex-direction: column;
       flex-wrap: wrap;
-      max-height: 40px;
       text-align: center;
+      width: 100%;
+
+      li {
+        padding: 0.8rem 0;
+        border-radius: 3px;
+        background: #222;
+        width: 100%;
+      }
     }
 
     li {

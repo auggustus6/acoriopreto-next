@@ -21,13 +21,6 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-// interface ImageShowcaseProps {
-//   links: {
-//     image: string;
-//     link: string;
-//     title: string;
-//   }[];
-// }
 
 export default function InformacoesTemplates() {
   const links = informacoesJson.map((info) => {
