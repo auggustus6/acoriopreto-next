@@ -1,13 +1,9 @@
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Link from "next/link";
 import { Container, Content } from "./styles";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
-import { formatLink } from "src/util/formatLink";
 import AsideNav from "@components/AsideNav";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "src/templates/MainLayout";
 
 interface ProdutoPageTemplateData {
   product: {
@@ -21,12 +17,10 @@ interface ProdutoPageTemplateData {
 export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData) {
   const { link, title, paragraphs, list } = product;
   return (
-    <>
-      <HeadMeta
-        description={title + " - " + title.slice(0, 100) + "... Saiba mais."}
-        pageTitle={title}
-      />
-      <Header />
+    <MainLayout
+      pageTitle={title}
+      descriptionMeta={title + " - " + title.slice(0, 100) + "... Saiba mais."}
+    >
       <Container>
         <PagePath
           paths={[
@@ -61,7 +55,6 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
           <AsideNav title="PRODUTOS" links={allLinksJson.produtos} />
         </Content>
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

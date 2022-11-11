@@ -1,10 +1,7 @@
-import Head from "next/head";
 import Image from "next/image";
 
-import Footer from "@components/Footer";
 import DefaultContainer from "@components/DefaultContainer";
 import Carousel from "@components/Carousel";
-import Header from "@components/Header";
 import DefaultButton from "@components/Buttons/DefaultButton";
 import FixedBackground from "@components/FixedBackground";
 import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai";
@@ -35,18 +32,17 @@ import thumb6 from "@images/products/6.png";
 import thumb7 from "@images/products/7.png";
 import thumb8 from "@images/products/8.png";
 import Link from "next/link";
-import HeadMeta from "@components/HeadMeta";
-import WppFloatIcon from "@components/WppFloatIcon";
+import MainLayout from "../MainLayout";
 
 export default function Home() {
   return (
-    <>
-      <HeadMeta
-        description="Nosso cliente adquire de maneira exata todos os elementos estruturais que a sua obra necessita, evitando compras em quantidades superiores... Saiba mais."
-        pageTitle="Home - AçoRio"
-      />
+    <MainLayout
+      pageTitle="Home - AçoRio"
+      descriptionMeta={`Nosso cliente adquire de maneira exata todos os elementos
+       estruturais que a sua obra necessita, evitando compras em quantidades superiores...
+       Saiba mais.`}
+    >
       <Container>
-        <Header />
         <Carousel />
         <BannerSection>
           <h1>
@@ -160,8 +156,7 @@ export default function Home() {
             </div>
           </DefaultContainer>
         </ProductsSection>
-        <Footer />
       </Container>
-    </>
+    </MainLayout>
   );
 }

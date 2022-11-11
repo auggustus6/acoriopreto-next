@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import StickyBg from "@images/sticky_bg.jpg";
 
 export default createGlobalStyle`
   * {
@@ -10,6 +9,7 @@ export default createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   }
+
 
   html,body{
     font: 400 1rem "Open sans", sans-serif, Helvetica;

@@ -1,12 +1,10 @@
 import DefaultContainer from "@components/DefaultContainer";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";
 import ImageShowcase from "@components/ImageShowcase";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "../MainLayout";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -28,10 +26,7 @@ export default function ObrasTemplate() {
     };
   });
   return (
-    <>
-      <HeadMeta pageTitle={links[0].title} />
-
-      <Header />
+    <MainLayout pageTitle={links[0].title}>
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Obras</PagePath>
         <h1>Obras</h1>
@@ -39,7 +34,6 @@ export default function ObrasTemplate() {
 
         <ImageShowcase links={links} />
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

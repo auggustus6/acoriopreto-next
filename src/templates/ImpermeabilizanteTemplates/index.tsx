@@ -1,14 +1,9 @@
 import DefaultContainer from "@components/DefaultContainer";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Image from "next/image";
-import Link from "next/link";
-import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
-import HeadMeta from "@components/HeadMeta";
 import ImageShowcase from "@components/ImageShowcase";
 import impermeabilizantesJson from "@mocs/impermeabilizantes.json";
+import MainLayout from "../MainLayout";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -21,8 +16,6 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-
-
 export default function ImpermeabilizanteTemplate() {
   const links = impermeabilizantesJson.map((item) => {
     return {
@@ -32,17 +25,13 @@ export default function ImpermeabilizanteTemplate() {
     };
   });
   return (
-    <>
-      <HeadMeta pageTitle="Impermeabilizantes - AçoRio" />
-      <Header />
+    <MainLayout pageTitle="Impermeabilizantes - AçoRio">
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Impermeabilizantes</PagePath>
         <h1>Impermeabilizantes</h1>
         <h3>Conheça nossos impermeabilizantes:</h3>
         <ImageShowcase links={links} />
-
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

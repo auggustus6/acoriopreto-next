@@ -1,14 +1,9 @@
 import DefaultContainer from "@components/DefaultContainer";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Image from "next/image";
-import Link from "next/link";
-import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import informacoesJson from "@mocs/informacoes.json";
 import ImageShowcase from "@components/ImageShowcase";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "../MainLayout";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -21,7 +16,6 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-
 export default function InformacoesTemplates() {
   const links = informacoesJson.map((info) => {
     return {
@@ -32,15 +26,14 @@ export default function InformacoesTemplates() {
   });
   return (
     <>
-      <HeadMeta pageTitle="Informações - AçoRio" />
-      <Header />
-      <Container>
-        <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
-        <h1>Informações</h1>
-        <h3>Conheça todas as Informações da AçoRio:</h3>
-        <ImageShowcase links={links} />
-      </Container>
-      <Footer />
+      <MainLayout pageTitle="Informações - AçoRio">
+        <Container>
+          <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
+          <h1>Informações</h1>
+          <h3>Conheça todas as Informações da AçoRio:</h3>
+          <ImageShowcase links={links} />
+        </Container>
+      </MainLayout>
     </>
   );
 }

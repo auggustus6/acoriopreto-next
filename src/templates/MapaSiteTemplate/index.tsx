@@ -1,12 +1,10 @@
 import DefaultContainer from "@components/DefaultContainer";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import Link from "next/link";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 import allLinks from "@mocs/menuLinks.json";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "../MainLayout";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -42,13 +40,12 @@ const Container = styled(DefaultContainer)`
 
 export default function MapaSiteTemplate() {
   return (
-    <>
-      <HeadMeta
-        pageTitle="Mapa do site - AçoRio"
-        description="O mapa do site com todos os atalhos para todas as páginas deste site. Qualquer dúvida estamos a disposição por email ou telefone. Clicando aqui"
-      />
-
-      <Header />
+    <MainLayout
+      pageTitle="Mapa do site - AçoRio"
+      descriptionMeta={`O mapa do site com todos os atalhos para todas as páginas
+         deste site. Qualquer dúvida estamos a disposição por email ou telefone.
+         Clicando aqui`}
+    >
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Mapa Site</PagePath>
         <h1>Mapa do site</h1>
@@ -91,7 +88,6 @@ export default function MapaSiteTemplate() {
           ))}
         </div>
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

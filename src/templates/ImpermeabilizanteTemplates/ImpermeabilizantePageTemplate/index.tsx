@@ -1,16 +1,14 @@
 // @ts-ignore
 import Lightbox from "react-awesome-lightbox";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import { Container, Content } from "./styles";
 import Image from "next/image";
 import allLinksJson from "@mocs/menuLinks.json";
 import AsideNav from "@components/AsideNav";
-import HeadMeta from "@components/HeadMeta";
 import { useState } from "react";
 
 import { HiMagnifyingGlass as ZoomIcon } from "react-icons/hi2";
+import MainLayout from "src/templates/MainLayout";
 
 interface ImpermeabilizantePageData {
   impermeabiliazante: {
@@ -28,47 +26,44 @@ export default function ImpermeabilizantePageTemplate({
   const [selectedImage, setSelectedImage] = useState("");
 
   return (
-    <>
-      <HeadMeta
-        description={titulo + " - " + titulo.slice(0, 100) + "... Saiba mais."}
+      <MainLayout
+        descriptionMeta={titulo + " - " + titulo.slice(0, 100) + "... Saiba mais."}
         pageTitle={titulo}
-      />
-      <Header />
-      <Container>
-        <PagePath
-          paths={[
-            { name: "Home", link: "/" },
-            { name: "Produtos", link: "/produtos" },
-          ]}
-        >
-          {titulo}
-        </PagePath>
-        <h1>{titulo}</h1>
-        <Content>
-          <main>
-            <h3>Confira:</h3>
-            <div className="float-image">
-              <Image
-                src={`/img/impermeabilizantes-page/${imagem}`}
-                width={300}
-                height={300}
-                alt={`imagem ilustrativa de ${titulo}`}
-                onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
-              />
-              <small
-                onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
-              >
-                <ZoomIcon size={24} />
-              </small>
-            </div>
+      >
+        <Container>
+          <PagePath
+            paths={[
+              { name: "Home", link: "/" },
+              { name: "Produtos", link: "/produtos" },
+            ]}
+          >
+            {titulo}
+          </PagePath>
+          <h1>{titulo}</h1>
+          <Content>
+            <main>
+              <h3>Confira:</h3>
+              <div className="float-image">
+                <Image
+                  src={`/img/impermeabilizantes-page/${imagem}`}
+                  width={300}
+                  height={300}
+                  alt={`imagem ilustrativa de ${titulo}`}
+                  onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
+                />
+                <small
+                  onClick={() => setSelectedImage(`/img/impermeabilizantes-page/${imagem}`)}
+                >
+                  <ZoomIcon size={24} />
+                </small>
+              </div>
 
-            <div dangerouslySetInnerHTML={{ __html: conteudo }}></div>
-          </main>
-          <AsideNav title="IMPERMEABILIZANTES" links={allLinksJson.impermeabilizantes} />
-        </Content>
-      </Container>
-      <Footer />
-      <Lightbox image={selectedImage} title={titulo} onClose={() => setSelectedImage("")} />
-    </>
+              <div dangerouslySetInnerHTML={{ __html: conteudo }}></div>
+            </main>
+            <AsideNav title="IMPERMEABILIZANTES" links={allLinksJson.impermeabilizantes} />
+          </Content>
+        </Container>
+        <Lightbox image={selectedImage} title={titulo} onClose={() => setSelectedImage("")} />
+      </MainLayout>
   );
 }

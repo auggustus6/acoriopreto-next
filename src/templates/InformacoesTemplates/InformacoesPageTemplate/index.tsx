@@ -13,7 +13,7 @@ import { FaTwitter as TwitterIcon } from "react-icons/fa";
 import { AiOutlineFacebook as FaceBookIcon } from "react-icons/ai";
 import ShowCities from "@components/ShowCities";
 import { formatLink } from "src/util/formatLink";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "src/templates/MainLayout";
 
 type ContentType = string | string[];
 
@@ -57,12 +57,6 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
     .slice(0, 3)
     .map((item) => item.target);
 
-  // posts: {
-  //   title: string;
-  //   image: string;
-  //   link: string;
-  // }[];
-
   const filteredPosts = informacoesJson
     .filter((item) => similiarPosts.includes(item.titulo.toUpperCase()))
     .map((item) => {
@@ -70,12 +64,10 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
     });
 
   return (
-    <>
-      <HeadMeta
-        description={titulo + " - " + post[0].conteudo.slice(0, 100) + "... Saiba mais."}
-        pageTitle={titulo}
-      />
-      <Header />
+    <MainLayout
+      descriptionMeta={titulo + " - " + post[0].conteudo.slice(0, 100) + "... Saiba mais."}
+      pageTitle={titulo}
+    >
       <Container>
         <PagePath
           paths={[
@@ -146,7 +138,6 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
           direitos autorais.
         </small>
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

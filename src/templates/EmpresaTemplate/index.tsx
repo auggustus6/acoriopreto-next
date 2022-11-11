@@ -1,21 +1,17 @@
-import FixedBackground from "@components/FixedBackground";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Link from "next/link";
 import { Container, AboutText } from "./styles";
 import banner from "./banner-sobre.jpg";
 import Image from "next/image";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "../MainLayout";
 
 export default function EmpresaPage() {
   return (
-    <>
-      <HeadMeta
-        description="Empresas que as atendam de forma flexível. visando o bem estar dos clientes, colaboradores, do futuro, trabalhando sempre preocupados com o meio... Saiba mais."
-        pageTitle="Empresa - AçoRio"
-      />
-      <Header />
+    <MainLayout
+      descriptionMeta={`Empresas que as atendam de forma flexível. visando
+       o bem estar dos clientes, colaboradores, do futuro, trabalhando sempre
+       preocupados com o meio... Saiba mais.`}
+      pageTitle="Empresa - AçoRio"
+    >
       <Container>
         <PagePath paths={[{ name: "Home", link: "/" }]}>Empresa</PagePath>
         <h1>Empresa</h1>
@@ -46,7 +42,6 @@ export default function EmpresaPage() {
           </p>
         </AboutText>
       </Container>
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

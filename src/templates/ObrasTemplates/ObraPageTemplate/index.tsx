@@ -1,13 +1,10 @@
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
-import Link from "next/link";
 import { Container, Content } from "./styles";
 import allLinksJson from "@mocs/menuLinks.json";
 
 import AsideNav from "@components/AsideNav";
 import ImagesContainer from "@components/ImagesContainer";
-import HeadMeta from "@components/HeadMeta";
+import MainLayout from "src/templates/MainLayout";
 
 interface ObraPageData {
   obra: {
@@ -19,32 +16,33 @@ interface ObraPageData {
 }
 
 export default function ObraPageTemplate({ obra }: ObraPageData) {
-  const { link, titulo, imagens, video } = obra;
+  const { titulo, imagens } = obra;
 
   return (
     <>
-      <HeadMeta description={titulo + " - " + titulo.slice(0,100)+ "... Saiba mais."} pageTitle={titulo} />
-
-      <Header />
-      <Container>
-        <PagePath
-          paths={[
-            { name: "Home", link: "/" },
-            { name: "Obras", link: "/obras" },
-          ]}
-        >
-          {titulo}
-        </PagePath>
-        <h1>{titulo}</h1>
-        <Content>
-          <main>
-            <h3>Confira:</h3>
-            <ImagesContainer title={titulo} images={imagens} path="/img/construcao-page" />
-          </main>
-          <AsideNav title="OBRAS" links={allLinksJson.obras} />
-        </Content>
-      </Container>
-      <Footer />
+      <MainLayout
+        descriptionMeta={titulo + " - " + titulo.slice(0, 100) + "... Saiba mais."}
+        pageTitle={titulo}
+      >
+        <Container>
+          <PagePath
+            paths={[
+              { name: "Home", link: "/" },
+              { name: "Obras", link: "/obras" },
+            ]}
+          >
+            {titulo}
+          </PagePath>
+          <h1>{titulo}</h1>
+          <Content>
+            <main>
+              <h3>Confira:</h3>
+              <ImagesContainer title={titulo} images={imagens} path="/img/construcao-page" />
+            </main>
+            <AsideNav title="OBRAS" links={allLinksJson.obras} />
+          </Content>
+        </Container>
+      </MainLayout>
     </>
   );
 }

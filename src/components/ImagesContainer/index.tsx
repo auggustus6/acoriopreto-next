@@ -13,10 +13,6 @@ const ImgContainer = styled.section`
   gap: 1rem;
   cursor: pointer;
 
-  div:last-child {
-    margin-right: auto;
-  }
-
   div {
     width: 124px;
     height: 124px;
@@ -41,6 +37,9 @@ const ImgContainer = styled.section`
         transform: scale(1.05);
       }
     }
+  }
+  @media (max-width: 480px) {
+    justify-content: center;
   }
 `;
 
