@@ -1,7 +1,5 @@
 import CarouselItem from "./CarouselItem";
 import { StyledSlider } from "./styles";
-import bg1 from "@images/banner.jpeg";
-import bg2 from "@images/banner2.png";
 import styles from "./styles.module.css";
 
 export default function Carousel() {
@@ -15,8 +13,10 @@ export default function Carousel() {
   };
   return (
     <StyledSlider {...settings} className={styles.reactSlickerCarousel}>
-      <CarouselItem imageLink={bg1.src} />
-      <CarouselItem imageLink={bg2.src} />
+      <CarouselItem imageLink="/img/banner.jpeg" />
+      <CarouselItem imageLink="/img/banner2.png" />
+      <CarouselItem imageLink="/img/banner3.png" />
+      <CarouselItem imageLink="/img/banner4.png" />
     </StyledSlider>
   );
 }
