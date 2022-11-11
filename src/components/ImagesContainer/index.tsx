@@ -11,7 +11,6 @@ const ImgContainer = styled.section`
   justify-content: flex-start;
   margin-top: 1rem;
   gap: 1rem;
-  cursor: pointer;
 
   div {
     width: 124px;
@@ -32,6 +31,7 @@ const ImgContainer = styled.section`
       box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
       object-fit: cover;
       transition: 0.3s;
+      cursor: pointer;
 
       :hover {
         transform: scale(1.05);
