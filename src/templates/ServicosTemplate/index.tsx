@@ -1,5 +1,5 @@
 import PagePath from "@components/PagePath";
-import { Container, Section } from "./styles";
+import { Banner, Container, Section } from "./styles";
 import Image from "next/image";
 import MainLayout from "../MainLayout";
 
@@ -15,23 +15,9 @@ export default function EmpresaPage() {
         <Container>
           <PagePath paths={[{ name: "Home", link: "/" }]}>Serviços</PagePath>
           <h1>Serviços</h1>
-          <Image
-            src="/img/servicos.png"
-            style={{ width: "100%", height: "auto" }}
-            width={1000}
-            height={315}
-            alt="Banner Topo"
-          />
+          <Banner src="/img/servicos.png" width={1000} height={315} alt="Banner Topo" />
           <Section>
-            <div className="image">
-              <Image
-                src="/img/thumb1-large.png"
-                style={{ width: "100%", height: "537px" }}
-                alt={""}
-                width={750}
-                height={1000}
-              />
-            </div>
+            <Image src="/img/thumb1-large.png" width={1000} height={315} alt="Banner Topo" />
             <div>
               <h3>Projeto de armação de ferragem</h3>
               <p>
@@ -57,16 +43,8 @@ export default function EmpresaPage() {
               </ul>
             </div>
           </Section>
-          <Section style={{ flexDirection: "row-reverse" }}>
-            <div className="image">
-              <Image
-                src="/img/thumb2.png"
-                style={{ width: "100%", height: "300px" }}
-                alt={""}
-                width={1170}
-                height={780}
-              />
-            </div>
+          <Section $isInverse>
+            <Image src="/img/thumb2.png" alt={""} width={1170} height={780} />
             <div>
               <h3>Serviços de engenharia em geral</h3>
               <p>
