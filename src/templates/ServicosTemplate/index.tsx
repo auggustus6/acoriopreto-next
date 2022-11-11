@@ -16,7 +16,7 @@ export default function EmpresaPage() {
           <PagePath paths={[{ name: "Home", link: "/" }]}>Serviços</PagePath>
           <h1>Serviços</h1>
           <Image
-            src="/img/topo-servicos.jpg"
+            src="/img/servicos.png"
             style={{ width: "100%", height: "315px" }}
             width={1000}
             height={315}
