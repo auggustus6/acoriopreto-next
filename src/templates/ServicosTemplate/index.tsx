@@ -15,10 +15,22 @@ export default function EmpresaPage() {
         <Container>
           <PagePath paths={[{ name: "Home", link: "/" }]}>Serviços</PagePath>
           <h1>Serviços</h1>
-          <Image src="/img/topo-servicos.jpg" width={1000} height={315} alt="Banner Topo" />
+          <Image
+            src="/img/topo-servicos.jpg"
+            style={{ width: "100%", height: "315px" }}
+            width={1000}
+            height={315}
+            alt="Banner Topo"
+          />
           <Section>
             <div className="image">
-              <Image src="/img/thumb1-large.png" alt={""} width={750} height={1000} />
+              <Image
+                src="/img/thumb1-large.png"
+                style={{ width: "100%", height: "537px" }}
+                alt={""}
+                width={750}
+                height={1000}
+              />
             </div>
             <div>
               <h3>Projeto de armação de ferragem</h3>
@@ -47,7 +59,13 @@ export default function EmpresaPage() {
           </Section>
           <Section style={{ flexDirection: "row-reverse" }}>
             <div className="image">
-              <Image src="/img/thumb2.png" alt={""} width={1170} height={780} />
+              <Image
+                src="/img/thumb2.png"
+                style={{ width: "100%", height: "300px" }}
+                alt={""}
+                width={1170}
+                height={780}
+              />
             </div>
             <div>
               <h3>Serviços de engenharia em geral</h3>
