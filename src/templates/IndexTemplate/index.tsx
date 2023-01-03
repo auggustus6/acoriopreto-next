@@ -1,3 +1,6 @@
+// @ts-ignore
+import Instafeed from "instafeed.js";
+
 import Image from "next/image";
 
 import DefaultContainer from "@components/DefaultContainer";
@@ -18,23 +21,27 @@ import {
   SubSection,
   CompanyInfo,
 } from "src/templates/IndexTemplate/servicesSectionStyles";
+import * as Styles from "./styles";
 
 import Thumbs1 from "@images/thumbs.png";
 import Thumbs2 from "@images/thumbs2.png";
 import StickyBg from "@images/sticky_bg.jpg";
 
-import thumb1 from "@images/products/1.png";
-import thumb2 from "@images/products/2.png";
-import thumb3 from "@images/products/3.png";
-import thumb4 from "@images/products/4.png";
-import thumb5 from "@images/products/5.png";
-import thumb6 from "@images/products/6.png";
-import thumb7 from "@images/products/7.png";
-import thumb8 from "@images/products/8.png";
 import Link from "next/link";
 import MainLayout from "../MainLayout";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    if (!document.getElementById("instafeed")?.hasChildNodes()) {
+      const feed = new Instafeed({
+        accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN,
+        limit: 3,
+      });
+      feed.run();
+    }
+  }, []);
+
   return (
     <MainLayout
       pageTitle="Home - AçoRio"
@@ -111,19 +118,19 @@ export default function Home() {
             <h2>Conheça alguns de nossos produtos:</h2>
             <div>
               <ProductLink href="vergalhoes-aco">
-                <ProductImg width={211} src={thumb1.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/8.png"} height={211} alt="" />
                 <p>VERGALHÕES DE AÇO</p>
               </ProductLink>
               <ProductLink href="telas-metalicas">
-                <ProductImg width={211} src={thumb2.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/7.png"} height={211} alt="" />
                 <p>TELAS METÁLICAS</p>
               </ProductLink>
               <ProductLink href="estribos">
-                <ProductImg width={211} src={thumb3.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/6.png"} height={211} alt="" />
                 <p>ESTRIBOS</p>
               </ProductLink>
               <ProductLink href="trelicas-ferro">
-                <ProductImg width={211} src={thumb4.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/5.png"} height={211} alt="" />
                 <p>TRELIÇAS DE FERRO</p>
               </ProductLink>
             </div>
@@ -138,22 +145,26 @@ export default function Home() {
             <h2>Informações em Destaque</h2>
             <div>
               <ProductLink href="viga-armada">
-                <ProductImg width={211} src={thumb5.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/4.png"} height={211} alt="" />
                 <p>VIGA ARMADA</p>
               </ProductLink>
               <ProductLink href="vergalhao-aco">
-                <ProductImg width={211} src={thumb6.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/3.png"} height={211} alt="" />
                 <p>VERGALHÃO DE AÇO</p>
               </ProductLink>
               <ProductLink href="trelica-aco">
-                <ProductImg width={211} src={thumb7.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/2.png"} height={211} alt="" />
                 <p>TRELIÇA AÇO</p>
               </ProductLink>
               <ProductLink href="ferragem-armada">
-                <ProductImg width={211} src={thumb8.src} height={211} alt="" />
+                <ProductImg width={211} src={"/img/products/1.png"} height={211} alt="" />
                 <p>FERRAGEM ARMADA</p>
               </ProductLink>
             </div>
+          </DefaultContainer>
+          <DefaultContainer>
+            <h2>Confira nossas ultimas publicações no instagram</h2>
+            <Styles.InstagramPostsContainer id="instafeed" />
           </DefaultContainer>
         </ProductsSection>
       </Container>

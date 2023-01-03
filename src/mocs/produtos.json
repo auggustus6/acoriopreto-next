@@ -60,5 +60,61 @@
       "O prego é uma haste de metal, com uma das pontas afiada e com outra achatada. É usado para unir objetos, sendo preferencialmente usado em madeira.",
       "Muito usado na construção civil para fabricação de caixarias, cavaletes em obras, gabaritos e marcações e ainda em estruturas de madeira (telhado) e madeiramento a vista."
     ]
+  },
+  {
+    "link": "capa-protetora1",
+    "titulo": "Capa Protetora",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "capa-protetora2",
+    "titulo": "Capa Protetora",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "capa-protetora3",
+    "titulo": "Capa Protetora",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "espacador1",
+    "titulo": "Espaçador 1",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "espacador2",
+    "titulo": "Espaçador 2",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "espacador3",
+    "titulo": "Espaçador 3",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
+  },
+  {
+    "link": "espacador4",
+    "titulo": "Espaçador 4",
+    "paragrafos": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lectus urna. Donec hendrerit pulvinar magna id sagittis. Vestibulum dapibus quis ipsum at elementum.",
+      "Fusce finibus condimentum ligula, eget semper dui. Etiam suscipit gravida nulla a mattis. In fermentum arcu nec magna facilisis fringilla. Phasellus non placerat sem."
+    ]
   }
 ]

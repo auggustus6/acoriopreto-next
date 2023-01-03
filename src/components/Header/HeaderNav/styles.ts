@@ -80,6 +80,7 @@ export const NavBar = styled.div<isOpen>`
     flex-direction: column;
     z-index: 1;
     background: ${(p) => p.theme.palette.primary.main};
+    overflow: auto;
 
     li {
       padding: 0.6rem 2.6rem 0.6rem 1rem;

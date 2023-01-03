@@ -65,11 +65,11 @@ export default function Footer() {
             </ul>
           </nav>
           <IconsContainer>
-            <StyledButton href="https://www.facebook.com/acoriopreto">
+            <StyledButton href="https://www.facebook.com/acoriopreto" target="_blank">
               <FaceBookIcon size={20} />
             </StyledButton>
 
-            <StyledButton href="https://www.instagram.com/acorio_aco/?utm_medium=copy_link">
+            <StyledButton href="https://www.instagram.com/acorio_aco/?utm_medium=copy_link" target="_blank">
               <IgIcon size={20} />
             </StyledButton>
             <StyledButton href="mailto:vitor.balbo@acoriopreto.com.br">
@@ -94,7 +94,7 @@ export default function Footer() {
             </span>
           </a>
           <a href="https://www.iniciodesign.com.br/">
-            <Image src={InicioDesignImg.src} width={16} height={16} alt="Logo Inicio Design" />
+            <Image src={InicioDesignImg.src} width={20} height={16} alt="Logo Inicio Design" />
           </a>
         </div>
       </SubFooter>

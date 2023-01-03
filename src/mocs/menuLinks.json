@@ -7,7 +7,14 @@
     "COLUNAS POP",
     "FERRAGENS ARMADAS",
     "ARAMES RECOZIDOS",
-    "PREGOS"
+    "PREGOS",
+    "CAPA PROTETORA1",
+    "CAPA PROTETORA2",
+    "CAPA PROTETORA3",
+    "ESPAÇADOR1",
+    "ESPAÇADOR2",
+    "ESPAÇADOR3",
+    "ESPAÇADOR4"
   ],
   "impermeabilizantes": [
     "ADITIVO PLASTIFICANTE QUARTZOLIT",

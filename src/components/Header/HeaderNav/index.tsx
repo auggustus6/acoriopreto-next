@@ -23,9 +23,6 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
   };
 
   useEffect(() => {
-    // if (document.documentElement.scrollHeight > 1400) {
-    //   window.addEventListener("scroll", listenScroll, true);
-    // }
     window.addEventListener("scroll", listenScroll, true);
 
     return window.removeEventListener("scroll", listenScroll);

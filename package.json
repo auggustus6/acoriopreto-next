@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "formik": "^2.2.9",
+    "instafeed.js": "^2.0.0",
     "next": "13.0.0",
     "react": "18.2.0",
     "react-awesome-lightbox": "^1.8.1",

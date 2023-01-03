@@ -23,22 +23,24 @@ export default function Header() {
           <p>Nº2020 - São José do Rio Preto-SP</p>
         </span>
         <Icons>
-          <a href="mailto:vitor.balbo@acoriopreto.com.br" title="Nosso email">
+          <a href="mailto:vitor.balbo@acoriopreto.com.br" title="Nosso email" >
             <EmailIcon size={16} />
           </a>
           <a
             href="https://www.instagram.com/acorio_aco/?utm_medium=copy_link"
             title="Visite nosso perfil no instagram"
+            target="_blank"
           >
             <IgIcon size={16} />
           </a>
           <a
             href="https://www.facebook.com/acoriopreto"
             title="Visite nossa página no facebook"
+            target="_blank"
           >
             <FaceBookIcon size={16} />
           </a>
-          <a href="tel:173238-3191" title="Clique e ligue">
+          <a href="tel:173238-3191" title="Clique e ligue" >
             <PhoneIcon size={13} />
             17 3238-3191
           </a>
