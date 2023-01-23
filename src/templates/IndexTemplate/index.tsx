@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() => {
     if (!document.getElementById("instafeed")?.hasChildNodes()) {
       const feed = new Instafeed({
-        accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN,
+        accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN || "",
         limit: 3,
       });
       feed.run();
