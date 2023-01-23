@@ -20,7 +20,9 @@ interface CarouselItemProps {
 export default function CarouselItem({ imageLink }: CarouselItemProps) {
   return (
     <Link href={""}>
-      <Background url={imageLink} />
+      <span>
+        <Background url={imageLink} />
+      </span>
     </Link>
   );
 }

@@ -82,9 +82,11 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
           <main>
             <ImagesContainer title={titulo} images={imagens} path={"/img/informacoes-page/"} />
             <small>Clique nas imagens para ampliar</small>
-            {post.map((item) =>
-              pickComponent({ htmlTipo: item.htmlTipo, conteudo: item.conteudo })
-            )}
+            {post.map((item, i) => (
+              <span key={i}>
+                {pickComponent({ htmlTipo: item.htmlTipo, conteudo: item.conteudo })}
+              </span>
+            ))}
           </main>
 
           <AsideNav title="INFORMAÇÕES" links={allLinksJson.informacoes} />

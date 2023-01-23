@@ -38,7 +38,7 @@ export const ProductsSection = styled.div`
 
 export const ProductImg = styled(Image)``;
 
-export const ProductLink = styled(Link)`
+export const ProductLink = styled.span`
   font-weight: 600;
   transition: transform 0.2s;
   margin: 0.4rem 1rem;

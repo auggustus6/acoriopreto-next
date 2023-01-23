@@ -33,13 +33,15 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
         <StyledHeaderNav $isOnTop={isOnTop}>
           <HeaderContent>
             <Link href={"/"}>
-              <StyledImage
-                src={Logo.src}
-                $isOnTop={isOnTop}
-                alt="Logo Aço Rio"
-                width={510}
-                height={173}
-              />
+              <span>
+                <StyledImage
+                  src={Logo.src}
+                  $isOnTop={isOnTop}
+                  alt="Logo Aço Rio"
+                  width={510}
+                  height={173}
+                />
+              </span>
             </Link>
             <NavBar open={isOpen}>
               <nav>

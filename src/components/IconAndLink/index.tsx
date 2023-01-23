@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { CSSProperties, ReactNode } from "react";
-import { IconType } from "react-icons";
+import { ReactNode } from "react";
 import { StyledLink } from "./styles";
 
 interface IconAndLinkProps {
@@ -21,9 +20,13 @@ export default function IconAndLink({
   className,
 }: IconAndLinkProps) {
   return (
-    <StyledLink href={link} rel={rel} title={title} className={className}>
-      {icon}
-      {text}
-    </StyledLink>
+    <Link href={link} rel={rel}>
+      <span>
+        <StyledLink title={title} className={className}>
+          {icon}
+          {text}
+        </StyledLink>
+      </span>
+    </Link>
   );
 }

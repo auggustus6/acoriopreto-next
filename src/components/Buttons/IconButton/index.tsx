@@ -23,7 +23,9 @@ export default function IconButton({
     <Container onClick={onClick}>{children}</Container>
   ) : (
     <Link href={href}>
-      <Container onClick={onClick}>{children}</Container>
+      <span>
+        <Container onClick={onClick}>{children}</Container>
+      </span>
     </Link>
   );
 }

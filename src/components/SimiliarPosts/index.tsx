@@ -15,11 +15,17 @@ interface SimiliarPosts {
 }
 
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  color: #666666;
-  gap: 0.2rem;
+
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    color: #666666;
+    gap: 0.2rem;
+    width: 100%;
+  }
 
   a {
     display: flex;
@@ -56,8 +62,10 @@ export default function SimiliarPosts({ path, posts, imageFolderPath }: Similiar
     <Container>
       {posts.map((post) => (
         <Link key={post.title} href={`${path}/${post.link}`}>
-          <Image src={`${imageFolderPath}/${post.image}`} width={82} height={82} alt={""} />
-          <h3>{post.title}</h3>
+          <span>
+            <Image src={`${imageFolderPath}/${post.image}`} width={82} height={82} alt={""} />
+            <h3>{post.title}</h3>
+          </span>
         </Link>
       ))}
     </Container>

@@ -30,6 +30,7 @@ import StickyBg from "@images/sticky_bg.jpg";
 import Link from "next/link";
 import MainLayout from "../MainLayout";
 import { useEffect } from "react";
+import { LINKS } from "src/constants/links";
 
 export default function Home() {
   useEffect(() => {
@@ -106,9 +107,11 @@ export default function Home() {
               de 08 anos.
             </p>
             <Link href="empresa">
-              <DefaultButton>
-                Saiba mais sobre a AçoRio <InfoIcon size={18} />
-              </DefaultButton>
+              <span>
+                <DefaultButton>
+                  Saiba mais sobre a AçoRio <InfoIcon size={18} />
+                </DefaultButton>
+              </span>
             </Link>
           </CompanyInfo>
         </SectionContainer>
@@ -117,50 +120,75 @@ export default function Home() {
           <DefaultContainer>
             <h2>Conheça alguns de nossos produtos:</h2>
             <div>
-              <ProductLink href="vergalhoes-aco">
-                <ProductImg width={211} src={"/img/products/8.png"} height={211} alt="" />
-                <p>VERGALHÕES DE AÇO</p>
-              </ProductLink>
-              <ProductLink href="telas-metalicas">
-                <ProductImg width={211} src={"/img/products/7.png"} height={211} alt="" />
-                <p>TELAS METÁLICAS</p>
-              </ProductLink>
-              <ProductLink href="estribos">
-                <ProductImg width={211} src={"/img/products/6.png"} height={211} alt="" />
-                <p>ESTRIBOS</p>
-              </ProductLink>
-              <ProductLink href="trelicas-ferro">
-                <ProductImg width={211} src={"/img/products/5.png"} height={211} alt="" />
-                <p>TRELIÇAS DE FERRO</p>
-              </ProductLink>
+              <Link href={LINKS.PRODUCT_VERGALHOES_DE_ACO}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/8.png"} height={211} alt="" />
+                  <p>VERGALHÕES DE AÇO</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.PRODUCT_TELAS_METALICAS}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/7.png"} height={211} alt="" />
+                  <p>TELAS METÁLICAS</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.PRODUCT_ESTRIBOS}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/6.png"} height={211} alt="" />
+                  <p>ESTRIBOS</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.PRODUCT_TRELICAS_DE_FERRO}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/5.png"} height={211} alt="" />
+                  <p>TRELIÇAS DE FERRO</p>
+                </ProductLink>
+              </Link>
             </div>
             <Link href="produtos">
-              <DefaultButton>
-                Lista de Produtos <TollBoxIcon size={16} />
-              </DefaultButton>
+              <span>
+                <DefaultButton>
+                  Lista de Produtos <TollBoxIcon size={16} />
+                </DefaultButton>
+              </span>
             </Link>
           </DefaultContainer>
 
           <DefaultContainer>
             <h2>Informações em Destaque</h2>
             <div>
-              <ProductLink href="viga-armada">
-                <ProductImg width={211} src={"/img/products/4.png"} height={211} alt="" />
-                <p>VIGA ARMADA</p>
-              </ProductLink>
-              <ProductLink href="vergalhao-aco">
-                <ProductImg width={211} src={"/img/products/3.png"} height={211} alt="" />
-                <p>VERGALHÃO DE AÇO</p>
-              </ProductLink>
-              <ProductLink href="trelica-aco">
-                <ProductImg width={211} src={"/img/products/2.png"} height={211} alt="" />
-                <p>TRELIÇA AÇO</p>
-              </ProductLink>
-              <ProductLink href="ferragem-armada">
-                <ProductImg width={211} src={"/img/products/1.png"} height={211} alt="" />
-                <p>FERRAGEM ARMADA</p>
-              </ProductLink>
+              <Link href={LINKS.INFO_VIGA_ARMADA}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/4.png"} height={211} alt="" />
+                  <p>VIGA ARMADA</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.INFO_VERGALHAO_DE_ACO}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/3.png"} height={211} alt="" />
+                  <p>VERGALHÃO DE AÇO</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.INFO_TRELICA_ACO}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/2.png"} height={211} alt="" />
+                  <p>TRELIÇA AÇO</p>
+                </ProductLink>
+              </Link>
+              <Link href={LINKS.INFO_FERRAGEM_ARMADA}>
+                <ProductLink>
+                  <ProductImg width={211} src={"/img/products/1.png"} height={211} alt="" />
+                  <p>FERRAGEM ARMADA</p>
+                </ProductLink>
+              </Link>
             </div>
+            <Link href="informacoes">
+              <span>
+                <DefaultButton>
+                  Mais Informacões <InfoIcon size={16} />
+                </DefaultButton>
+              </span>
+            </Link>
           </DefaultContainer>
           <DefaultContainer>
             <h2>Confira nossas ultimas publicações no instagram</h2>

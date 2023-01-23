@@ -10,7 +10,9 @@ export default function WppFloatIcon() {
       title="Fale conosco!"
       target="_blank"
     >
-      <Image src={WppIcon.src} width={70} height={70} alt="WhatsApp logo" />
+      <span>
+        <Image src={WppIcon.src} width={70} height={70} alt="WhatsApp logo" />
+      </span>
     </WhatsAppLink>
   );
 }
