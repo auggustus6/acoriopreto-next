@@ -88,7 +88,6 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
               </span>
             ))}
           </main>
-
           <AsideNav title="INFORMAÇÕES" links={allLinksJson.informacoes} />
         </Content>
         <div>

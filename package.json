@@ -12,6 +12,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "formik": "^2.2.9",
     "instafeed.js": "^2.0.0",
+    "instagram-private-api": "^1.45.3",
     "next": "13.0.0",
     "react": "18.2.0",
     "react-awesome-lightbox": "^1.8.1",

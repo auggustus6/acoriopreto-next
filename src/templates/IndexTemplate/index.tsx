@@ -32,16 +32,22 @@ import MainLayout from "../MainLayout";
 import { useEffect } from "react";
 import { LINKS } from "src/constants/links";
 
-export default function Home() {
-  useEffect(() => {
-    if (!document.getElementById("instafeed")?.hasChildNodes()) {
-      const feed = new Instafeed({
-        accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN || "",
-        limit: 3,
-      });
-      feed.run();
-    }
-  }, []);
+interface HomeTemplateProps {
+  igPosts?: string[];
+}
+
+export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
+  // useEffect(() => {
+  //   if (!document.getElementById("instafeed")?.hasChildNodes()) {
+  //     const feed = new Instafeed({
+  //       accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN || "",
+  //       limit: 3,
+  //     });
+  //     feed.run();
+  //   }
+  // }, []);
+
+  console.log(igPosts);
 
   return (
     <MainLayout
@@ -192,7 +198,14 @@ export default function Home() {
           </DefaultContainer>
           <DefaultContainer>
             <h2>Confira nossas ultimas publicações no instagram</h2>
-            <Styles.InstagramPostsContainer id="instafeed" />
+            {/* <Styles.InstagramPostsContainer id="instafeed" /> */}
+            <Styles.InstagramPostsContainer>
+              {igPosts?.map((post) => (
+                <div key={post}>
+                  <img src={post + "?not-from-cache-please"} crossOrigin="anonymous" />
+                </div>
+              ))}
+            </Styles.InstagramPostsContainer>
           </DefaultContainer>
         </ProductsSection>
       </Container>
