@@ -29,7 +29,6 @@ import StickyBg from "@images/sticky_bg.jpg";
 
 import Link from "next/link";
 import MainLayout from "../MainLayout";
-import { useEffect } from "react";
 import { LINKS } from "src/constants/links";
 
 interface HomeTemplateProps {
@@ -46,8 +45,6 @@ export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
   //     feed.run();
   //   }
   // }, []);
-
-  console.log(igPosts);
 
   return (
     <MainLayout
@@ -202,7 +199,13 @@ export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
             <Styles.InstagramPostsContainer>
               {igPosts?.map((post) => (
                 <div key={post}>
-                  <img src={post + "?not-from-cache-please"} crossOrigin="anonymous" />
+                  <Image
+                    src={post + "?not-from-cache-please"}
+                    crossOrigin="anonymous"
+                    alt={""}
+                    width={200}
+                    height={200}
+                  />
                 </div>
               ))}
             </Styles.InstagramPostsContainer>

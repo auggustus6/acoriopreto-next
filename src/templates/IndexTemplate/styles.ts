@@ -8,21 +8,24 @@ export const InstagramPostsContainer = styled.div`
   margin: 0 !important;
   margin-bottom: 4rem !important;
 
-  a {
-    max-height: 300px;
-    max-width: 300px;
-    flex: 1;
-    transition: all .3s ease;
+  div {
+    margin-top: 0;
+  }
 
-    img {
-      flex: 1;
-      height: 100%;
-      width: 100%;
-      border-radius: 3px;
-    }
-
-    &:hover {
-      opacity: 0.9;
-    }
+  img {
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
   }
 `;
+
+// cursor: pointer;
+
+// transition: all 0.3s;
+
+// &:hover {
+//   transform: scale(1.05);
+//   /* opacity: 0.8; */
+// }

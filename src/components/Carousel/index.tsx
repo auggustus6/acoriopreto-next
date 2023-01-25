@@ -9,7 +9,10 @@ export default function Carousel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
+    noSwipping: true,
+    allowTouchMove: false,
+    touchRatio: 0,
   };
   return (
     <StyledSlider {...settings} className={styles.reactSlickerCarousel}>

@@ -7,8 +7,6 @@ interface HomeProps {
 }
 
 export default function Home({ igPostsUrl }: HomeProps) {
-  console.log({ igPostsUrl });
-
   return <IndexTemplate igPosts={igPostsUrl} />;
 }
 
@@ -37,8 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
         postsUrl.push(images[1].url);
       }
     }
-
-    console.log(postsUrl);
   } catch (error) {
     console.error(error);
   }
