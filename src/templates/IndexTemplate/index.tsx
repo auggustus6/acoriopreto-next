@@ -30,21 +30,24 @@ import StickyBg from "@images/sticky_bg.jpg";
 import Link from "next/link";
 import MainLayout from "../MainLayout";
 import { LINKS } from "src/constants/links";
+import { useEffect } from "react";
 
 interface HomeTemplateProps {
-  igPosts?: string[];
+  // igPosts?: string[];
 }
 
-export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
-  // useEffect(() => {
-  //   if (!document.getElementById("instafeed")?.hasChildNodes()) {
-  //     const feed = new Instafeed({
-  //       accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN || "",
-  //       limit: 3,
-  //     });
-  //     feed.run();
-  //   }
-  // }, []);
+export default function HomeTemplate({}: HomeTemplateProps) {
+  useEffect(() => {
+    if (!document.getElementById("instafeed")?.hasChildNodes()) {
+      const feed = new Instafeed({
+        accessToken: process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN!,
+        limit: 3,
+        template:
+          '<a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a>',
+      });
+      feed.run();
+    }
+  }, []);
 
   return (
     <MainLayout
@@ -195,8 +198,8 @@ export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
           </DefaultContainer>
           <DefaultContainer>
             <h2>Confira nossas ultimas publicações no instagram</h2>
-            {/* <Styles.InstagramPostsContainer id="instafeed" /> */}
-            <Styles.InstagramPostsContainer>
+            <Styles.InstagramPostsContainer id="instafeed" />
+            {/* <Styles.InstagramPostsContainer>
               {igPosts?.map((post) => (
                 <div key={post}>
                   <Image
@@ -208,7 +211,7 @@ export default function HomeTemplate({ igPosts }: HomeTemplateProps) {
                   />
                 </div>
               ))}
-            </Styles.InstagramPostsContainer>
+            </Styles.InstagramPostsContainer> */}
           </DefaultContainer>
         </ProductsSection>
       </Container>
