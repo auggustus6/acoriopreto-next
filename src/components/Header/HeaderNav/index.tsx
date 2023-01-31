@@ -4,9 +4,13 @@ import Logo from "@images/logo.png";
 import { AiFillCaretDown as DownIcon } from "react-icons/ai";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 import { MdClose as CloseMenuIcon } from "react-icons/md";
-import AllLinks from "@mocs/menuLinks.json";
 import Link from "next/link";
-import { formatLink } from "src/util/formatLink";
+
+import productsJson from "@mocs/produtos.json";
+import impermeabilizantesJson from "@mocs/impermeabilizantes.json";
+import infoJson from "@mocs/informacoes.json";
+import obrasJson from "@mocs/obras.json";
+
 import { useRouter } from "next/router";
 
 interface HeaderNavProps {
@@ -69,10 +73,10 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     )}
                     <DownIcon size={14} className="hide-mobile" />
                     <ul>
-                      {AllLinks.produtos.map((linkName, i) => {
+                      {productsJson.map((product, i) => {
                         return (
-                          <Link href={`/produtos/${formatLink(linkName)}`} key={i}>
-                            <li>{linkName}</li>
+                          <Link href={`/produtos/${product.link}`} key={product.link}>
+                            <li>{product.titulo}</li>
                           </Link>
                         );
                       })}
@@ -92,10 +96,10 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     )}
                     <DownIcon size={14} className="hide-mobile" />
                     <ul>
-                      {AllLinks.impermeabilizantes.map((linkName, i) => {
+                      {impermeabilizantesJson.map((imper, i) => {
                         return (
-                          <Link href={`/impermeabilizantes/${formatLink(linkName)}`} key={i}>
-                            <li>{linkName}</li>
+                          <Link href={`/impermeabilizantes/${imper.link}`} key={imper.link}>
+                            <li>{imper.titulo}</li>
                           </Link>
                         );
                       })}
@@ -116,10 +120,10 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     )}
                     <DownIcon size={14} className="hide-mobile" />
                     <ul>
-                      {AllLinks.obras.map((linkName, i) => {
+                      {obrasJson.map((obra, i) => {
                         return (
-                          <Link href={`/obras/${formatLink(linkName)}`} key={i}>
-                            <li>{linkName}</li>
+                          <Link href={`/obras/${obra.link}`} key={obra.link}>
+                            <li>{obra.titulo}</li>
                           </Link>
                         );
                       })}
@@ -135,10 +139,10 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     )}
                     <DownIcon size={14} className="hide-mobile" />
                     <ul style={{ overflowY: "scroll" }}>
-                      {AllLinks.informacoes.map((linkName, i) => {
+                      {infoJson.map((info, i) => {
                         return (
-                          <Link href={`/informacoes/${formatLink(linkName)}`} key={i}>
-                            <li>{linkName}</li>
+                          <Link href={`/obras/${info.link}`} key={info.link}>
+                            <li>{info.titulo}</li>
                           </Link>
                         );
                       })}

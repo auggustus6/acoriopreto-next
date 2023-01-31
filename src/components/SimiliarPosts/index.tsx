@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
 
 interface SimiliarPosts {

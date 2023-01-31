@@ -68,7 +68,7 @@ export default function HomeTemplate({}: HomeTemplateProps) {
           <h2>Serviços</h2>
           <SubSection>
             <div>
-              <h3>Projeto de armação de ferragem</h3>
+              <h3>Armação e instalação de ferragem</h3>
               <p>
                 Nosso cliente adquire de maneira exata todos os elementos estruturais que a sua
                 obra necessita, evitando compras em quantidades superiores às necessárias,
@@ -90,7 +90,7 @@ export default function HomeTemplate({}: HomeTemplateProps) {
               <p>
                 Para uma obra ter sucesso em sua execução é fundamental que projeto tenha sido
                 bem elaborado, com quantidades bem dimensionadas e orçamento quantificado de
-                maneira inteligência e viável.
+                maneira inteligente e viável.
               </p>
             </div>
             <span>
@@ -105,13 +105,12 @@ export default function HomeTemplate({}: HomeTemplateProps) {
           <CompanyInfo>
             <h3>AçoRio - Ferro e aço sob medida para sua construção</h3>
             <p>
-              A Aço Rio surgiu da necessidade de pequenas obras da construção civil, que não
-              encontram empresas que as atendam de forma flexível. Visando o bem estar dos
+              A AçoRio surgiu em 2014 da necessidade de pequenas obras da construção civil, que
+              não encontram empresas que as atendam de forma flexível. Visando o bem estar dos
               clientes, colaboradores, do futuro, trabalhando sempre preocupados com o meio
-              ambiente. Comandada por Vitor Balbo, que tem uma vasta experiência no ramo da
-              construção civil, tendo prestado serviços para uma empresa multinacional por mais
-              de 08 anos.
+              ambiente.
             </p>
+
             <Link href="empresa">
               <span>
                 <DefaultButton>

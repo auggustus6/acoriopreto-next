@@ -5,7 +5,10 @@ import { formatLink } from "src/util/formatLink";
 import { AsideContainer } from "./styles";
 
 interface AsideNavProps {
-  links: string[];
+  links: {
+    href: string;
+    text: string;
+  }[];
   title: string;
 }
 
@@ -18,8 +21,8 @@ export default function AsideNav({ links, title }: AsideNavProps) {
       <h3>{title}</h3>
       <ul>
         {links.map((link) => (
-          <li key={link} className={formatLink(link) == routeLink ? "active-nav" : ""}>
-            <Link href={`${formatLink(link)}`}>{link}</Link>
+          <li key={link.href} className={link.href == routeLink ? "active-nav" : ""}>
+            <Link href={`${link.href}`}>{link.text}</Link>
           </li>
         ))}
       </ul>

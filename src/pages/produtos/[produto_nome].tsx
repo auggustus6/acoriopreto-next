@@ -1,7 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import ProdutoPageTemplate from "src/templates/ProdutosTemplates/ProdutoPageTemplate";
-import { formatLink } from "src/util/formatLink";
-import allLinksJson from "@mocs/menuLinks.json";
 import produtosJson from "@mocs/produtos.json";
 
 interface ProdutoPageData {
@@ -18,10 +16,10 @@ export default function index({ product }: ProdutoPageData) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const productsNames = allLinksJson.produtos.map((prod) => {
+  const productsNames = produtosJson.map((prod) => {
     return {
       params: {
-        produto_nome: formatLink(prod),
+        produto_nome: prod.link,
       },
     };
   });
@@ -45,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         title: prod?.titulo,
         paragraphs: prod?.paragrafos,
         list: prod?.lista || null,
+        footer: prod?.footer || null,
       },
     },
   };

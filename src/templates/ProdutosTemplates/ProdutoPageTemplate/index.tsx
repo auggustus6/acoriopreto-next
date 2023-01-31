@@ -1,7 +1,9 @@
 import PagePath from "@components/PagePath";
 import { Container, Content } from "./styles";
 import Image from "next/image";
-import allLinksJson from "@mocs/menuLinks.json";
+
+import produtosJson from "@mocs/produtos.json";
+
 import AsideNav from "@components/AsideNav";
 import MainLayout from "src/templates/MainLayout";
 
@@ -11,11 +13,17 @@ interface ProdutoPageTemplateData {
     title: string;
     paragraphs: string[];
     list?: string[];
+    footer?: string[];
   };
 }
 
 export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData) {
-  const { link, title, paragraphs, list } = product;
+  const { link, title, paragraphs, list, footer } = product;
+
+  const productsLinks = produtosJson.map((prod) => {
+    return { href: prod.link, text: prod.titulo };
+  });
+
   return (
     <MainLayout
       pageTitle={title}
@@ -41,7 +49,7 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
               alt={`imagem ilustrativa de ${title}`}
             />
             {paragraphs?.map((text) => (
-              <p key={text?.slice(0, 30)}>{text}</p>
+              <p key={text} dangerouslySetInnerHTML={{ __html: text }}></p>
             ))}
 
             {list && (
@@ -51,8 +59,12 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
                 ))}
               </ul>
             )}
+
+            {footer?.map((text) => (
+              <p key={text}>{text}</p>
+            ))}
           </main>
-          <AsideNav title="PRODUTOS" links={allLinksJson.produtos} />
+          <AsideNav title="PRODUTOS" links={productsLinks} />
         </Content>
       </Container>
     </MainLayout>

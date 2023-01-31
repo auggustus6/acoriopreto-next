@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import { formatLink } from "src/util/formatLink";
-import produtosJson from "@mocs/produtos.json";
-import obrasJson from "@mocs/obras.json";
 import { useEffect } from "react";
 import { GetStaticPaths } from "next";
-import allLinksJson from "@mocs/menuLinks.json";
+
+import productsJson from "@mocs/produtos.json";
+import impermeabilizantesJson from "@mocs/impermeabilizantes.json";
+import infoJson from "@mocs/informacoes.json";
+import obrasJson from "@mocs/obras.json";
 
 interface RedirectProps {
   link: string;
@@ -16,7 +17,7 @@ export default function Redirect({ link, type }: RedirectProps) {
 
   useEffect(() => {
     if (link) {
-      router.push(`/${type}/${formatLink(link)}`);
+      router.push(`/${type}/${link}`);
       return () => {};
     } else {
       router.push("/404");
@@ -28,18 +29,38 @@ export default function Redirect({ link, type }: RedirectProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  let links = allLinksJson.produtos.map((obra) => {
+  let links = productsJson.map((prod) => {
     return {
       params: {
-        redirect: formatLink(obra),
+        redirect: prod.link,
       },
     };
   });
   links.push(
-    ...allLinksJson.obras.map((obra) => {
+    ...obrasJson.map((obra) => {
       return {
         params: {
-          redirect: formatLink(obra),
+          redirect: obra.link,
+        },
+      };
+    })
+  );
+
+  links.push(
+    ...impermeabilizantesJson.map((imper) => {
+      return {
+        params: {
+          redirect: imper.link,
+        },
+      };
+    })
+  );
+
+  links.push(
+    ...infoJson.map((info) => {
+      return {
+        params: {
+          redirect: info.link,
         },
       };
     })
@@ -56,7 +77,7 @@ export const getStaticProps = async ({ req, params }: any) => {
 
     let link = null;
 
-    link = produtosJson.find((prod) => prod.link == redirect)?.link;
+    link = productsJson.find((prod) => prod.link == redirect)?.link;
     if (link) {
       return {
         props: { type: "produtos", link },
@@ -64,6 +85,20 @@ export const getStaticProps = async ({ req, params }: any) => {
     }
 
     link = obrasJson.find((obra) => obra.link == redirect)?.link;
+    if (link) {
+      return {
+        props: { type: "obras", link },
+      };
+    }
+
+    link = impermeabilizantesJson.find((obra) => obra.link == redirect)?.link;
+    if (link) {
+      return {
+        props: { type: "obras", link },
+      };
+    }
+
+    link = infoJson.find((obra) => obra.link == redirect)?.link;
     if (link) {
       return {
         props: { type: "obras", link },

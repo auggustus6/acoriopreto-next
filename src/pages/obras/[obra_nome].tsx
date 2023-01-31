@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { formatLink } from "src/util/formatLink";
-import allLinksJson from "@mocs/menuLinks.json";
 import obrasJson from "@mocs/obras.json";
 import ObraPageTemplate from "src/templates/ObrasTemplates/ObraPageTemplate";
 
@@ -21,10 +20,10 @@ export default function index({ obra }: ObraPageData) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const obraNomes = allLinksJson.obras.map((obra) => {
+  const obraNomes = obrasJson.map((obra) => {
     return {
       params: {
-        obra_nome: formatLink(obra),
+        obra_nome: obra.link,
       },
     };
   });

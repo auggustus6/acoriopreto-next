@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { Container } from "./style";
 
 interface CloseButtonProps {

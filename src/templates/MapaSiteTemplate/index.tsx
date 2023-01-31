@@ -1,10 +1,13 @@
 import DefaultContainer from "@components/DefaultContainer";
 import PagePath from "@components/PagePath";
 import Link from "next/link";
-import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
-import allLinks from "@mocs/menuLinks.json";
 import MainLayout from "../MainLayout";
+
+import productsJson from "@mocs/produtos.json";
+import impermeabilizantesJson from "@mocs/impermeabilizantes.json";
+import infoJson from "@mocs/informacoes.json";
+import obrasJson from "@mocs/obras.json";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -59,12 +62,17 @@ export default function MapaSiteTemplate() {
           <Link href="/produtos">
             <h3>Produtos</h3>
           </Link>
-          <Link href="/produtos">
-            <h3>Produtos</h3>
+          {productsJson.map((item) => (
+            <Link key={item.link} href={`/produtos/${item.link}`}>
+              <h4>{item.titulo}</h4>
+            </Link>
+          ))}
+          <Link href="/impermeabilizantes">
+            <h3>Impermeabilizantes</h3>
           </Link>
-          {allLinks.produtos.map((item) => (
-            <Link key={item} href={`/produtos/${formatLink(item)}`}>
-              <h4>{item}</h4>
+          {impermeabilizantesJson.map((item) => (
+            <Link key={item.link} href={`/impermeabilizantes/${item.link}`}>
+              <h4>{item.titulo}</h4>
             </Link>
           ))}
           <Link href="/servicos">
@@ -73,17 +81,17 @@ export default function MapaSiteTemplate() {
           <Link href="/obras">
             <h3>Obras</h3>
           </Link>
-          {allLinks.obras.map((item) => (
-            <Link key={item} href={`/obras/${formatLink(item)}`}>
-              <h4>{item}</h4>
+          {obrasJson.map((item) => (
+            <Link key={item.link} href={`/obras/${item.link}`}>
+              <h4>{item.titulo}</h4>
             </Link>
           ))}
           <Link href="/informacoes">
             <h3>Informações</h3>
           </Link>
-          {allLinks.informacoes.map((item) => (
-            <Link key={item} href={`/obras/${formatLink(item)}`}>
-              <h4>{item}</h4>
+          {infoJson.map((item) => (
+            <Link key={item.link} href={`/informacoes/${item.link}`}>
+              <h4>{item.titulo}</h4>
             </Link>
           ))}
         </div>

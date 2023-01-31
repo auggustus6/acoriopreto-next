@@ -43,7 +43,7 @@ export const StyledImage = styled(Image)<NavProps>`
   height: ${(p) => (p.$isOnTop ? "3rem" : "4rem")};
   width: auto;
   margin: 1rem 0;
-  transition: height 0.3s;
+  transition: all 0.3s;
 
   @media (max-width: 900px) {
     height: ${(p) => (p.$isOnTop ? "2.4rem" : "3rem")};
@@ -58,6 +58,7 @@ export const NavBar = styled.div<isOpen>`
     white-space: nowrap;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
 
     @media (max-width: 980px) {
       font-size: 0.8rem;

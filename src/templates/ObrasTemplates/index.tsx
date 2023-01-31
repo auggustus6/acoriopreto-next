@@ -1,10 +1,10 @@
 import DefaultContainer from "@components/DefaultContainer";
 import PagePath from "@components/PagePath";
-import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
-import allLinks from "@mocs/menuLinks.json";
 import ImageShowcase from "@components/ImageShowcase";
 import MainLayout from "../MainLayout";
+
+import obrasJson from "@mocs/obras.json";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -18,11 +18,11 @@ const Container = styled(DefaultContainer)`
 `;
 
 export default function ObrasTemplate() {
-  const links = allLinks.obras.map((obra) => {
+  const links = obrasJson.map((obra) => {
     return {
-      image: `/img/construcao-page/${formatLink(obra)}.jpg`,
-      link: `/obras/${formatLink(obra)}`,
-      title: obra,
+      image: `/img/construcao-page/${obra.link}.jpg`,
+      link: `/obras/${obra.link}`,
+      title: obra.titulo,
     };
   });
   return (

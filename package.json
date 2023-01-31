@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsclint": "npx tsc --noEmit"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",

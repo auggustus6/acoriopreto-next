@@ -1,8 +1,5 @@
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import PagePath from "@components/PagePath";
 import { Container, Content } from "./styles";
-import allLinksJson from "@mocs/menuLinks.json";
 import AsideNav from "@components/AsideNav";
 import ImagesContainer from "@components/ImagesContainer";
 import React from "react";
@@ -50,8 +47,14 @@ function pickComponent({ htmlTipo, conteudo }: ItemPost) {
 export default function InformacoesPageTemplate({ informacao }: InformacaoPageData) {
   const { link, titulo, imagens, post } = informacao;
 
+  const informacoesTitles = informacoesJson.map((info) => info.titulo);
+
+  const informacoesLinks = informacoesJson.map((info) => {
+    return {href: info.link, text: info.titulo}
+  });
+
   const similiarPosts = stringSimilarity
-    .findBestMatch(titulo.toUpperCase(), allLinksJson.informacoes)
+    .findBestMatch(titulo.toUpperCase(), informacoesTitles)
     .ratings.filter((item) => titulo.toUpperCase() != item.target && item.rating >= 0.3)
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 3)
@@ -88,7 +91,7 @@ export default function InformacoesPageTemplate({ informacao }: InformacaoPageDa
               </span>
             ))}
           </main>
-          <AsideNav title="INFORMAÇÕES" links={allLinksJson.informacoes} />
+          <AsideNav title="INFORMAÇÕES" links={informacoesLinks} />
         </Content>
         <div>
           <h3 className="h3-title">Para saber mais sobre Aço para construção</h3>

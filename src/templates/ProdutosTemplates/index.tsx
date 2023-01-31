@@ -2,9 +2,10 @@ import DefaultContainer from "@components/DefaultContainer";
 import PagePath from "@components/PagePath";
 import { formatLink } from "src/util/formatLink";
 import styled from "styled-components";
-import allLinks from "@mocs/menuLinks.json";
 import ImageShowcase from "@components/ImageShowcase";
 import MainLayout from "../MainLayout";
+
+import productsJson from "@mocs/produtos.json";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -18,11 +19,11 @@ const Container = styled(DefaultContainer)`
 `;
 
 export default function ProdutosTemplates() {
-  const images = allLinks.produtos;
+  const images = productsJson.map(prod => prod.link);
   const links = images.map((item) => {
     return {
-      image: `/img/produtos-page/${formatLink(item)}.jpg`,
-      link: `produtos/${formatLink(item)}`,
+      image: `/img/produtos-page/${item}.jpg`,
+      link: `produtos/${item}`,
       title: item,
     };
   });

@@ -19,18 +19,21 @@ export default function EmpresaPage() {
           <Section>
             <Image src="/img/thumb1-large.png" width={1000} height={315} alt="Banner Topo" />
             <div>
-              <h3>Projeto de armação de ferragem</h3>
+              <h3>Armação e instalação de ferragem</h3>
               <p>
                 Nosso cliente adquire de maneira exata todos os elementos estruturais que a sua
                 obra necessita, evitando compras em quantidades superiores às necessárias,
                 eliminando todas as perdas provenientes de pontas e extravio de peças.
               </p>
               <p>
-                O aço é cortado e dobrado nos mais diversos formatos, com precisão absoluta,
-                seguindo rigorosamente as especificações do projeto, com entrega programada
-                conforme o cronograma da obra.
+                O aço é cortado, dobrado, armado e instalado nos mais diversos formatos, com
+                precisão absoluta, seguindo rigorosamente as especificações do projeto, com
+                entrega programada conforme o cronograma da obra.
               </p>
-              <p>Veja algumas vantagens de usar a ferragem armada (corte e dobra):</p>
+              <p>
+                Veja algumas vantagens de usar a ferragem armada (corte, dobra, arma e
+                instala):
+              </p>
 
               <ul>
                 <li>Eliminação de perda com pontas Menor espaço de armazenamento</li>

@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { formatLink } from "src/util/formatLink";
-import allLinksJson from "@mocs/menuLinks.json";
+
+
 import impermeabilizanteJson from "@mocs/impermeabilizantes.json";
 import ImpermeabilizantePageTemplate from "src/templates/ImpermeabilizanteTemplates/ImpermeabilizantePageTemplate";
 
@@ -18,10 +19,10 @@ export default function index({ impermeabiliazante }: ImpermeabilizantePageData)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const names = allLinksJson.impermeabilizantes.map((item) => {
+  const names = impermeabilizanteJson.map((imper) => {
     return {
       params: {
-        impermeabilizante_nome: formatLink(item),
+        impermeabilizante_nome: imper.link,
       },
     };
   });

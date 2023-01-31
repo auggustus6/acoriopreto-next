@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { formatLink } from "src/util/formatLink";
-import allLinksJson from "@mocs/menuLinks.json";
 import informacoesJson from "@mocs/informacoes.json";
 import InformacoesPageTemplate from "src/templates/InformacoesTemplates/InformacoesPageTemplate";
 
@@ -26,10 +25,10 @@ export default function index({ informacao }: InformacaoPageData) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const informacoesNomes = allLinksJson.informacoes.map((prod) => {
+  const informacoesNomes = informacoesJson.map((info) => {
     return {
       params: {
-        informacao_nome: formatLink(prod),
+        informacao_nome: info.link,
       },
     };
   });

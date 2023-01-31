@@ -33,6 +33,7 @@ export const AsideContainer = styled.aside`
     margin: 0.4rem 0;
     padding-left: 0.6rem;
     border-left: 2px solid #ccc;
+    text-transform: uppercase;
   }
 
   .active-nav,

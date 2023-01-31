@@ -1,10 +1,11 @@
 import PagePath from "@components/PagePath";
 import { Container, Content } from "./styles";
-import allLinksJson from "@mocs/menuLinks.json";
 
 import AsideNav from "@components/AsideNav";
 import ImagesContainer from "@components/ImagesContainer";
 import MainLayout from "src/templates/MainLayout";
+
+import obrasJson from "@mocs/obras.json";
 
 interface ObraPageData {
   obra: {
@@ -17,6 +18,10 @@ interface ObraPageData {
 
 export default function ObraPageTemplate({ obra }: ObraPageData) {
   const { titulo, imagens } = obra;
+
+  const obrasLinks = obrasJson.map((obra) => {
+    return {href: obra.link, text: obra.titulo}
+  });
 
   return (
     <>
@@ -39,7 +44,7 @@ export default function ObraPageTemplate({ obra }: ObraPageData) {
               <h3>Confira:</h3>
               <ImagesContainer title={titulo} images={imagens} path="/img/construcao-page" />
             </main>
-            <AsideNav title="OBRAS" links={allLinksJson.obras} />
+            <AsideNav title="OBRAS" links={obrasLinks} />
           </Content>
         </Container>
       </MainLayout>
