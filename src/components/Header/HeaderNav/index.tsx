@@ -141,7 +141,7 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     <ul style={{ overflowY: "scroll" }}>
                       {infoJson.map((info, i) => {
                         return (
-                          <Link href={`/obras/${info.link}`} key={info.link}>
+                          <Link href={`/informacoes/${info.link}`} key={info.link}>
                             <li>{info.titulo}</li>
                           </Link>
                         );

@@ -6,6 +6,8 @@ import produtosJson from "@mocs/produtos.json";
 
 import AsideNav from "@components/AsideNav";
 import MainLayout from "src/templates/MainLayout";
+import { useRouter } from "next/router";
+import ImagesContainer from "@components/ImagesContainer";
 
 interface ProdutoPageTemplateData {
   product: {
@@ -18,11 +20,19 @@ interface ProdutoPageTemplateData {
 }
 
 export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData) {
+  const router = useRouter();
+
   const { link, title, paragraphs, list, footer } = product;
 
   const productsLinks = produtosJson.map((prod) => {
     return { href: prod.link, text: prod.titulo };
   });
+
+  const gallery =
+    router.asPath.includes("ponteira-de-protecao") &&
+    Array(8)
+      .fill(null)
+      .map((_, i) => `prod(${i + 1}).jpeg`);
 
   return (
     <MainLayout
@@ -63,6 +73,17 @@ export default function ProdutoPageTemplate({ product }: ProdutoPageTemplateData
             {footer?.map((text) => (
               <p key={text}>{text}</p>
             ))}
+
+            {/* {router.asPath.includes("corte-e-dobra-de-ferragem") && (
+              Array(8).fill(null).map((_, i) => <ImagesContainer title={""} images={imagens} path={"/img/informacoes-page/"} />)
+            )} */}
+            {gallery && (
+              <ImagesContainer
+                title={""}
+                images={gallery}
+                path={"/img/produtos-page/ponteira/"}
+              />
+            )}
           </main>
           <AsideNav title="PRODUTOS" links={productsLinks} />
         </Content>
