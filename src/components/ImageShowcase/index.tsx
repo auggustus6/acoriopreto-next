@@ -51,7 +51,7 @@ export default function ImageShowcase({ links }: ImageShowcaseProps) {
               src={`${link.image}`}
               fill
               alt={`foto ilustrativa de ${link.title?.toLowerCase()}`}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
             />
           </span>
           <span>{link.title}</span>
