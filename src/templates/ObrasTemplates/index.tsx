@@ -20,11 +20,12 @@ const Container = styled(DefaultContainer)`
 export default function ObrasTemplate() {
   const links = obrasJson.map((obra) => {
     return {
-      image: `/img/construcao-page/${obra.link}.jpg`,
+      image: `/img/construcao-page/${obra.imagens[0]}`,
       link: `/obras/${obra.link}`,
       title: obra.titulo,
     };
   });
+
   return (
     <MainLayout pageTitle={links[0].title}>
       <Container>
