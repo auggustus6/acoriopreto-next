@@ -5,7 +5,7 @@ import styled from "styled-components";
 import ImageShowcase from "@components/ImageShowcase";
 import MainLayout from "../MainLayout";
 
-import productsJson from "@mocs/produtos.json";
+import ferramentasJson from "@mocs/ferramentas.json";
 
 const Container = styled(DefaultContainer)`
   margin: 0.4rem 0 2rem 0;
@@ -18,27 +18,33 @@ const Container = styled(DefaultContainer)`
   }
 `;
 
-export default function ProdutosTemplates() {
-  const images = productsJson.map((prod) => prod.link);
+export default function FerramentasTemplate() {
+  const images = ferramentasJson.map((ferr) => ferr.link);
   const links = images.map((item) => {
     return {
-      image: `/img/produtos-page/${item}.jpg`,
-      link: `produtos/${item}`,
+      image: `/img/ferramentas-page/${item}.jpg`,
+      link: `ferramentas/${item}`,
       title: item,
     };
   });
-
-  links.shift();
 
   return (
     <>
       <MainLayout pageTitle="Produtos - AçoRio">
         <Container>
-          <PagePath paths={[{ name: "Home", link: "/" }]}>Produtos</PagePath>
-          <h1>Produtos</h1>
-          <h3>Conheça nossos produtos:</h3>
+          <PagePath
+            paths={[
+              { name: "Home", link: "/" },
+              { name: "Produtos", link: "/produtos" },
+            ]}
+          >
+            Ferramentas
+          </PagePath>
+          <h1>Ferramentas</h1>
+          <h3>Conheça nossos ferramentas:</h3>
           <ImageShowcase links={links} />
         </Container>
+        <div style={{paddingTop: "6rem"}}></div>
       </MainLayout>
     </>
   );

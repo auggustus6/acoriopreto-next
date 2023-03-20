@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { StyledHeaderNav, HeaderContent, StyledImage, NavBar, CloseButton } from "./styles";
 import Logo from "@images/logo.png";
-import { AiFillCaretDown as DownIcon } from "react-icons/ai";
+import { AiFillCaretDown as DownIcon, AiFillCaretRight as MoreIcon } from "react-icons/ai";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 import { MdClose as CloseMenuIcon } from "react-icons/md";
 import Link from "next/link";
@@ -74,6 +74,18 @@ export default function HeaderNav({ isOpen, setIsOpen, isOnTop, setIsOnTop }: He
                     <DownIcon size={14} className="hide-mobile" />
                     <ul>
                       {productsJson.map((product, i) => {
+                        if (i === 0) {
+                          return (
+                            <Link
+                              href={`/produtos/${product.link}`}
+                              key={product.link}
+                              style={{ position: "relative" }}
+                            >
+                              <li>{product.titulo} </li>{" "}
+                              <MoreIcon style={{ position: "absolute", top:"36%", right: "5%" }} />
+                            </Link>
+                          );
+                        }
                         return (
                           <Link href={`/produtos/${product.link}`} key={product.link}>
                             <li>{product.titulo}</li>

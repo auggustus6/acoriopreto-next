@@ -16,6 +16,8 @@ export default createGlobalStyle`
     color: ${(p) => p.theme.blackText};
   }
 
+
+
   .swal2-confirm, .swal2-styled{
     background: ${(p) => p.theme.palette.primary.main} !important;
   }

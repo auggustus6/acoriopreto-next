@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled(DefaultContainer)`
+  margin-top: auto;
   background: #333;
   padding-top: 2rem;
   .content {
