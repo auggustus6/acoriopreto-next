@@ -20,11 +20,11 @@ const Container = styled(DefaultContainer)`
 
 export default function ProdutosTemplates() {
   const images = productsJson.map((prod) => prod.link);
-  const links = images.map((item) => {
+  const links = productsJson.map((item) => {
     return {
-      image: `/img/produtos-page/${item}.jpg`,
-      link: `produtos/${item}`,
-      title: item,
+      image: `/img/produtos-page/${item.link}.jpg`,
+      link: `produtos/${item.link}`,
+      title: item.titulo,
     };
   });
 

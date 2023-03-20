@@ -19,12 +19,12 @@ const Container = styled(DefaultContainer)`
 `;
 
 export default function FerramentasTemplate() {
-  const images = ferramentasJson.map((ferr) => ferr.link);
+  const images = ferramentasJson.map((ferr) => ({link: ferr.link, title: ferr.titulo}));
   const links = images.map((item) => {
     return {
-      image: `/img/ferramentas-page/${item}.jpg`,
-      link: `ferramentas/${item}`,
-      title: item,
+      image: `/img/ferramentas-page/${item.link}.jpg`,
+      link: `ferramentas/${item.link}`,
+      title: item.title,
     };
   });
 

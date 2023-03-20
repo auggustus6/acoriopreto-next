@@ -6,8 +6,6 @@ import ferramentasJson from "@mocs/ferramentas.json";
 
 import AsideNav from "@components/AsideNav";
 import MainLayout from "src/templates/MainLayout";
-import { useRouter } from "next/router";
-import ImagesContainer from "@components/ImagesContainer";
 
 interface FerramentaPageTemplateData {
   ferramenta: {

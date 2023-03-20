@@ -46,12 +46,12 @@ export default function ImageShowcase({ links }: ImageShowcaseProps) {
     <ImagesContainer>
       {links.map((link) => (
         <Link key={link.link} href={`${link.link}`}>
-          <span>
+          <span style={{ width: "215px", height: "215px", position: "relative" }}>
             <Image
               src={`${link.image}`}
-              width={215}
-              height={202}
+              fill
               alt={`foto ilustrativa de ${link.title?.toLowerCase()}`}
+              style={{ objectFit: "cover" }}
             />
           </span>
           <span>{link.title}</span>
