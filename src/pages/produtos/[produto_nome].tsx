@@ -23,6 +23,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
       },
     };
   });
+
+  productsNames.shift();
+
   return {
     paths: [...productsNames],
     fallback: false, // can also be true or 'blocking'
