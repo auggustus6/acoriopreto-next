@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         link: ferr?.link,
         title: ferr?.titulo,
         paragraphs: ferr?.paragrafos,
-        // list: prod?.lista || null,
+        list: ferr?.list || null,
         // footer: prod?.footer || null,
       },
     },

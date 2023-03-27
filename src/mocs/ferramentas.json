@@ -3,17 +3,19 @@
     "link": "torques-para-amador",
     "titulo": "Torques Para Amador",
     "paragrafos": [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      "<strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit:</strong></br></br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor sit amet absun ergos dolor</br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor</br>- Lorem, ipsum dolor",
-      "<strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit:</strong></br></br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor sit amet absun ergos dolor</br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor</br>- Lorem, ipsum dolor"
-    ]
+      "O torquês armador é uma ferramenta voltada para apertar e cortar cabos, arames e estruturas de ferro em geral. Trata-se de um dos tipos mais fortes de alicate, com alta capacidade de torque e corte",
+      "<strong>Temos as medidas:</strong>"
+    ],
+    "list": ["13 e 15 polegadas"]
   },
   {
     "link": "chave-dobra-vergalhao",
     "titulo": "Chave Dobra Vergalhão",
     "paragrafos": [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      "<strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit:</strong></br></br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor sit amet absun ergos dolor</br>- Lorem, ipsum dolor sit amet</br>- Lorem, ipsum dolor</br>- Lorem, ipsum dolor"
-    ]
+      "A Chave Dobra Vergalhao é uma barra de ferro com um rebaixo semi circular em sua extremidade, ótima para dobrar ferros, auxiliando no trabalho a ser feito, sendo para dar forma particular à ferragem, ou para também recurvar uma extremidade.",
+      "A ferramenta é indicada para o uso profissional, e recomendada o uso em aplicações para dobrar vergalhões de ferro.",
+      "<strong>Temos as medidas de chaves:</strong>"
+    ],
+    "list": ["6,3mm(1/4)", "8 mm (5/16)", "10 mm(3/8)", "16mm(5/8) e 20mm(3/4)", "12,5mm(1/2)"]
   }
 ]
