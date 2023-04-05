@@ -1,5 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@apiRoutes/*": ["./src/pages/api/*"],
+      "@rootStyle/*": ["./src/styles/*"],
+      "@mocs/*": ["./src/mocs/*"],
+      "@themes/*": ["./src/themes/*"],
+      "@images/*": ["./public/img/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,6 +25,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/styles/contato/styles.ts"],
   "exclude": ["node_modules"]
 }

@@ -6,17 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsclint": "npx tsc --noEmit"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "formik": "^2.2.9",
+    "instafeed.js": "^2.0.0",
+    "instagram-private-api": "^1.45.3",
     "next": "13.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-awesome-lightbox": "^1.8.1",
+    "react-dom": "18.2.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-icons": "^4.6.0",
+    "react-slick": "^0.29.0",
+    "sharp": "^0.31.1",
+    "slick-carousel": "^1.8.1",
+    "string-similarity": "^4.0.4",
+    "styled-components": "^5.3.6",
+    "sweetalert2": "^11.6.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "@types/react-google-recaptcha": "^2.1.5",
+    "@types/react-slick": "^0.23.10",
+    "@types/string-similarity": "^4.0.0",
+    "@types/styled-components": "^5.1.26",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
     "typescript": "4.8.4"
