@@ -9,7 +9,8 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App: any) => (props: any) =>
+            sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -36,7 +37,25 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+          <link
+            rel="shortcut icon"
+            href="/img/favicon.png"
+            type="image/x-icon"
+          />
+
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-ZR8W8Y0XFW"
+          ></script>
+          <script>
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZR8W8Y0XFW');
+            `}
+          </script>
         </Head>
         <body>
           <Main />
